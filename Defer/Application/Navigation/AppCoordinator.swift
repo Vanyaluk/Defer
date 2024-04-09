@@ -20,7 +20,7 @@ final class AppCoordinator: FlowCoordinator {
     func start() {
         // transitionCrossDissolve
         if let window {
-            UIView.transition(with: window, duration: 0.6, options: .transitionFlipFromRight, animations: nil, completion: nil)
+            UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
         }
         switch authManager.getAuthStatus() {
         case .authAndHaveTelegram:

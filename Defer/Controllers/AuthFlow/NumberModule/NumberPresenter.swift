@@ -33,7 +33,11 @@ extension NumberPresenter: NumberPresenterProtocol {
     
     func buttonTapped() {
         // TODO: запрос за статусом на сервер
-        authManager.changeAuthStatus(.authAndWaitingForTelegramCode)
-        completion()
+        view?.loadingStart()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            self?.view?.loadingFinish(warning: nil)
+            self?.authManager.changeAuthStatus(.authAndWaitingForTelegramCode)
+            self?.completion()
+        }
     }
 }

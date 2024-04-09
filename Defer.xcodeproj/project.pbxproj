@@ -33,12 +33,14 @@
 		52355BDA2BC51D9E0027035C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BD62BC51D9E0027035C /* HomeViewController.swift */; };
 		52355BDB2BC51D9E0027035C /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BD72BC51D9E0027035C /* HomeAssembly.swift */; };
 		52355BDD2BC51DC90027035C /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BDC2BC51DC90027035C /* AuthCoordinator.swift */; };
-		8480C6BEC3839D67C5EB04FD /* Pods_Defer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044B298E0149BC2E40A236B2 /* Pods_Defer.framework */; };
+		52550CE92BC5601E008CE849 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 52550CE82BC5601E008CE849 /* SnapKit */; };
+		52550CEB2BC5601E008CE849 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 52550CEA2BC5601E008CE849 /* SnapKit-Dynamic */; };
+		52550CEF2BC56386008CE849 /* OpenAPIRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 52550CEE2BC56386008CE849 /* OpenAPIRuntime */; };
+		52550CF22BC5639D008CE849 /* OpenAPIURLSession in Frameworks */ = {isa = PBXBuildFile; productRef = 52550CF12BC5639D008CE849 /* OpenAPIURLSession */; };
+		52550CF62BC567C6008CE849 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52550CF52BC567C6008CE849 /* KeychainManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		044B298E0149BC2E40A236B2 /* Pods_Defer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Defer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		40469704FD72487DBE5E4D68 /* Pods-Defer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Defer.release.xcconfig"; path = "Target Support Files/Pods-Defer/Pods-Defer.release.xcconfig"; sourceTree = "<group>"; };
 		52355B6D2BC45A6B0027035C /* Defer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Defer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52355B702BC45A6B0027035C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52355B722BC45A6B0027035C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +69,7 @@
 		52355BD62BC51D9E0027035C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		52355BD72BC51D9E0027035C /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
 		52355BDC2BC51DC90027035C /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
-		751C7B79C9C4DF96CB1AC2CE /* Pods-Defer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Defer.debug.xcconfig"; path = "Target Support Files/Pods-Defer/Pods-Defer.debug.xcconfig"; sourceTree = "<group>"; };
+		52550CF52BC567C6008CE849 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +77,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8480C6BEC3839D67C5EB04FD /* Pods_Defer.framework in Frameworks */,
+				52550CF22BC5639D008CE849 /* OpenAPIURLSession in Frameworks */,
+				52550CE92BC5601E008CE849 /* SnapKit in Frameworks */,
+				52550CEF2BC56386008CE849 /* OpenAPIRuntime in Frameworks */,
+				52550CEB2BC5601E008CE849 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,8 +92,6 @@
 			children = (
 				52355B6F2BC45A6B0027035C /* Defer */,
 				52355B6E2BC45A6B0027035C /* Products */,
-				82CADDACE7EECC4E847DF58A /* Pods */,
-				BB47898CF4CB80E5BBCFA1AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				52355BAB2BC4FE8C0027035C /* AuthManager.swift */,
+				52550CF52BC567C6008CE849 /* KeychainManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -238,23 +242,6 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		82CADDACE7EECC4E847DF58A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				751C7B79C9C4DF96CB1AC2CE /* Pods-Defer.debug.xcconfig */,
-				40469704FD72487DBE5E4D68 /* Pods-Defer.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		BB47898CF4CB80E5BBCFA1AF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				044B298E0149BC2E40A236B2 /* Pods_Defer.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,17 +249,21 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52355B812BC45A6E0027035C /* Build configuration list for PBXNativeTarget "Defer" */;
 			buildPhases = (
-				4C9CDF39AD7FEC20F48485BD /* [CP] Check Pods Manifest.lock */,
 				52355B692BC45A6B0027035C /* Sources */,
 				52355B6A2BC45A6B0027035C /* Frameworks */,
 				52355B6B2BC45A6B0027035C /* Resources */,
-				C14242284A0021E56151AD7A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Defer;
+			packageProductDependencies = (
+				52550CE82BC5601E008CE849 /* SnapKit */,
+				52550CEA2BC5601E008CE849 /* SnapKit-Dynamic */,
+				52550CEE2BC56386008CE849 /* OpenAPIRuntime */,
+				52550CF12BC5639D008CE849 /* OpenAPIURLSession */,
+			);
 			productName = Defer;
 			productReference = 52355B6D2BC45A6B0027035C /* Defer.app */;
 			productType = "com.apple.product-type.application";
@@ -301,6 +292,12 @@
 				Base,
 			);
 			mainGroup = 52355B642BC45A6B0027035C;
+			packageReferences = (
+				52550CE72BC5601E008CE849 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				52550CEC2BC56358008CE849 /* XCRemoteSwiftPackageReference "swift-openapi-generator" */,
+				52550CED2BC56386008CE849 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */,
+				52550CF02BC5639D008CE849 /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */,
+			);
 			productRefGroup = 52355B6E2BC45A6B0027035C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -322,48 +319,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		4C9CDF39AD7FEC20F48485BD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Defer-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C14242284A0021E56151AD7A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Defer/Pods-Defer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Defer/Pods-Defer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Defer/Pods-Defer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		52355B692BC45A6B0027035C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -373,6 +328,7 @@
 				52355BC72BC50EDE0027035C /* CodePresenter.swift in Sources */,
 				52355BBF2BC50ED30027035C /* NumberPresenter.swift in Sources */,
 				52355BD12BC50EE80027035C /* PasswordViewController.swift in Sources */,
+				52550CF62BC567C6008CE849 /* KeychainManager.swift in Sources */,
 				52355BA42BC4FA860027035C /* FlowCoordinator.swift in Sources */,
 				52355BAC2BC4FE8C0027035C /* AuthManager.swift in Sources */,
 				52355B752BC45A6B0027035C /* ViewController.swift in Sources */,
@@ -531,7 +487,6 @@
 		};
 		52355B822BC45A6E0027035C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 751C7B79C9C4DF96CB1AC2CE /* Pods-Defer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -543,7 +498,6 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -563,7 +517,6 @@
 		};
 		52355B832BC45A6E0027035C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40469704FD72487DBE5E4D68 /* Pods-Defer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -575,7 +528,6 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -615,6 +567,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		52550CE72BC5601E008CE849 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		52550CEC2BC56358008CE849 /* XCRemoteSwiftPackageReference "swift-openapi-generator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-generator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.1;
+			};
+		};
+		52550CED2BC56386008CE849 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-runtime";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.2;
+			};
+		};
+		52550CF02BC5639D008CE849 /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-urlsession";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		52550CE82BC5601E008CE849 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52550CE72BC5601E008CE849 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		52550CEA2BC5601E008CE849 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52550CE72BC5601E008CE849 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+		52550CEE2BC56386008CE849 /* OpenAPIRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52550CED2BC56386008CE849 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */;
+			productName = OpenAPIRuntime;
+		};
+		52550CF12BC5639D008CE849 /* OpenAPIURLSession */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52550CF02BC5639D008CE849 /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */;
+			productName = OpenAPIURLSession;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 52355B652BC45A6B0027035C /* Project object */;
 }

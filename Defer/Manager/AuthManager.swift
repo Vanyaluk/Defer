@@ -20,13 +20,14 @@ protocol AuthManagerProtocol {
     /// Получить статус входа
     func getAuthStatus() -> AuthStatus
     
+    /// Изменить статус входа
     func changeAuthStatus(_ newValue: AuthStatus)
 }
 
 // MARK: - Менеджер входа в приложение
 final class AuthManager: AuthManagerProtocol {
     
-    private var authStatus: AuthStatus = .notAuth
+    private var authStatus: AuthStatus = .authAndwaitingForTelegramNumber
     
     func changeAuthStatus(_ newValue: AuthStatus) {
         authStatus = newValue

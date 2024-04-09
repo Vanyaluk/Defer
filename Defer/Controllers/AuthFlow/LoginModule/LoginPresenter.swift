@@ -34,7 +34,11 @@ extension LoginPresenter: LoginPresenterProtocol {
     
     func buttonTapped() {
         // TODO: запрос за статусом на сервер
-        authManager.changeAuthStatus(.authAndwaitingForTelegramNumber)
-        completion()
+        view?.loadingStart()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            self?.view?.loadingFinish(warning: nil)
+            self?.authManager.changeAuthStatus(.authAndwaitingForTelegramNumber)
+            self?.completion()
+        }
     }
 }
