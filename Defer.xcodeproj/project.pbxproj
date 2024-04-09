@@ -12,9 +12,33 @@
 		52355B752BC45A6B0027035C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355B742BC45A6B0027035C /* ViewController.swift */; };
 		52355B7A2BC45A6E0027035C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52355B792BC45A6E0027035C /* Assets.xcassets */; };
 		52355B7D2BC45A6E0027035C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52355B7B2BC45A6E0027035C /* LaunchScreen.storyboard */; };
+		52355BA42BC4FA860027035C /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BA32BC4FA860027035C /* FlowCoordinator.swift */; };
+		52355BA62BC4FD470027035C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BA52BC4FD470027035C /* AppCoordinator.swift */; };
+		52355BA82BC4FE0F0027035C /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BA72BC4FE0F0027035C /* AppAssembly.swift */; };
+		52355BAC2BC4FE8C0027035C /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BAB2BC4FE8C0027035C /* AuthManager.swift */; };
+		52355BB32BC50DD30027035C /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BAF2BC50DD20027035C /* LoginPresenter.swift */; };
+		52355BB52BC50DD30027035C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BB12BC50DD20027035C /* LoginViewController.swift */; };
+		52355BB62BC50DD30027035C /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BB22BC50DD20027035C /* LoginAssembly.swift */; };
+		52355BBF2BC50ED30027035C /* NumberPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BBB2BC50ED30027035C /* NumberPresenter.swift */; };
+		52355BC12BC50ED30027035C /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BBD2BC50ED30027035C /* NumberViewController.swift */; };
+		52355BC22BC50ED30027035C /* NumberAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BBE2BC50ED30027035C /* NumberAssembly.swift */; };
+		52355BC72BC50EDE0027035C /* CodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BC32BC50EDE0027035C /* CodePresenter.swift */; };
+		52355BC92BC50EDE0027035C /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BC52BC50EDE0027035C /* CodeViewController.swift */; };
+		52355BCA2BC50EDE0027035C /* CodeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BC62BC50EDE0027035C /* CodeAssembly.swift */; };
+		52355BCF2BC50EE80027035C /* PasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BCB2BC50EE80027035C /* PasswordPresenter.swift */; };
+		52355BD12BC50EE80027035C /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BCD2BC50EE80027035C /* PasswordViewController.swift */; };
+		52355BD22BC50EE80027035C /* PasswordAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BCE2BC50EE80027035C /* PasswordAssembly.swift */; };
+		52355BD82BC51D9E0027035C /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BD42BC51D9E0027035C /* HomePresenter.swift */; };
+		52355BD92BC51D9E0027035C /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BD52BC51D9E0027035C /* HomeRouter.swift */; };
+		52355BDA2BC51D9E0027035C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BD62BC51D9E0027035C /* HomeViewController.swift */; };
+		52355BDB2BC51D9E0027035C /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BD72BC51D9E0027035C /* HomeAssembly.swift */; };
+		52355BDD2BC51DC90027035C /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BDC2BC51DC90027035C /* AuthCoordinator.swift */; };
+		8480C6BEC3839D67C5EB04FD /* Pods_Defer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044B298E0149BC2E40A236B2 /* Pods_Defer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		044B298E0149BC2E40A236B2 /* Pods_Defer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Defer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40469704FD72487DBE5E4D68 /* Pods-Defer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Defer.release.xcconfig"; path = "Target Support Files/Pods-Defer/Pods-Defer.release.xcconfig"; sourceTree = "<group>"; };
 		52355B6D2BC45A6B0027035C /* Defer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Defer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52355B702BC45A6B0027035C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52355B722BC45A6B0027035C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -22,6 +46,28 @@
 		52355B792BC45A6E0027035C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52355B7C2BC45A6E0027035C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52355B7E2BC45A6E0027035C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52355BA32BC4FA860027035C /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
+		52355BA52BC4FD470027035C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		52355BA72BC4FE0F0027035C /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
+		52355BAB2BC4FE8C0027035C /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		52355BAF2BC50DD20027035C /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		52355BB12BC50DD20027035C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		52355BB22BC50DD20027035C /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
+		52355BBB2BC50ED30027035C /* NumberPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPresenter.swift; sourceTree = "<group>"; };
+		52355BBD2BC50ED30027035C /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
+		52355BBE2BC50ED30027035C /* NumberAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberAssembly.swift; sourceTree = "<group>"; };
+		52355BC32BC50EDE0027035C /* CodePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePresenter.swift; sourceTree = "<group>"; };
+		52355BC52BC50EDE0027035C /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		52355BC62BC50EDE0027035C /* CodeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeAssembly.swift; sourceTree = "<group>"; };
+		52355BCB2BC50EE80027035C /* PasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPresenter.swift; sourceTree = "<group>"; };
+		52355BCD2BC50EE80027035C /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		52355BCE2BC50EE80027035C /* PasswordAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordAssembly.swift; sourceTree = "<group>"; };
+		52355BD42BC51D9E0027035C /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		52355BD52BC51D9E0027035C /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		52355BD62BC51D9E0027035C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		52355BD72BC51D9E0027035C /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
+		52355BDC2BC51DC90027035C /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		751C7B79C9C4DF96CB1AC2CE /* Pods-Defer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Defer.debug.xcconfig"; path = "Target Support Files/Pods-Defer/Pods-Defer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8480C6BEC3839D67C5EB04FD /* Pods_Defer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +87,8 @@
 			children = (
 				52355B6F2BC45A6B0027035C /* Defer */,
 				52355B6E2BC45A6B0027035C /* Products */,
+				82CADDACE7EECC4E847DF58A /* Pods */,
+				BB47898CF4CB80E5BBCFA1AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				52355B842BC460E20027035C /* Application */,
+				52355BA92BC4FE6D0027035C /* Manager */,
+				52355BAA2BC4FE790027035C /* API */,
 				52355B852BC460F30027035C /* Views */,
 				52355B862BC461090027035C /* Controllers */,
 				52355B7E2BC45A6E0027035C /* Info.plist */,
@@ -67,6 +118,8 @@
 			children = (
 				52355B702BC45A6B0027035C /* AppDelegate.swift */,
 				52355B722BC45A6B0027035C /* SceneDelegate.swift */,
+				52355BA72BC4FE0F0027035C /* AppAssembly.swift */,
+				52355BDE2BC51DE00027035C /* Navigation */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -84,8 +137,122 @@
 			isa = PBXGroup;
 			children = (
 				52355B742BC45A6B0027035C /* ViewController.swift */,
+				52355BAD2BC5077C0027035C /* AuthFlow */,
+				52355BAE2BC507890027035C /* MainFlow */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		52355BA92BC4FE6D0027035C /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				52355BAB2BC4FE8C0027035C /* AuthManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		52355BAA2BC4FE790027035C /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		52355BAD2BC5077C0027035C /* AuthFlow */ = {
+			isa = PBXGroup;
+			children = (
+				52355BDC2BC51DC90027035C /* AuthCoordinator.swift */,
+				52355BB72BC50DDD0027035C /* LoginModule */,
+				52355BB82BC50DE70027035C /* NumberModule */,
+				52355BB92BC50E9A0027035C /* CodeModule */,
+				52355BBA2BC50EA60027035C /* PasswordModule */,
+			);
+			path = AuthFlow;
+			sourceTree = "<group>";
+		};
+		52355BAE2BC507890027035C /* MainFlow */ = {
+			isa = PBXGroup;
+			children = (
+				52355BD32BC51D430027035C /* HomeModule */,
+			);
+			path = MainFlow;
+			sourceTree = "<group>";
+		};
+		52355BB72BC50DDD0027035C /* LoginModule */ = {
+			isa = PBXGroup;
+			children = (
+				52355BB12BC50DD20027035C /* LoginViewController.swift */,
+				52355BAF2BC50DD20027035C /* LoginPresenter.swift */,
+				52355BB22BC50DD20027035C /* LoginAssembly.swift */,
+			);
+			path = LoginModule;
+			sourceTree = "<group>";
+		};
+		52355BB82BC50DE70027035C /* NumberModule */ = {
+			isa = PBXGroup;
+			children = (
+				52355BBD2BC50ED30027035C /* NumberViewController.swift */,
+				52355BBB2BC50ED30027035C /* NumberPresenter.swift */,
+				52355BBE2BC50ED30027035C /* NumberAssembly.swift */,
+			);
+			path = NumberModule;
+			sourceTree = "<group>";
+		};
+		52355BB92BC50E9A0027035C /* CodeModule */ = {
+			isa = PBXGroup;
+			children = (
+				52355BC52BC50EDE0027035C /* CodeViewController.swift */,
+				52355BC32BC50EDE0027035C /* CodePresenter.swift */,
+				52355BC62BC50EDE0027035C /* CodeAssembly.swift */,
+			);
+			path = CodeModule;
+			sourceTree = "<group>";
+		};
+		52355BBA2BC50EA60027035C /* PasswordModule */ = {
+			isa = PBXGroup;
+			children = (
+				52355BCD2BC50EE80027035C /* PasswordViewController.swift */,
+				52355BCB2BC50EE80027035C /* PasswordPresenter.swift */,
+				52355BCE2BC50EE80027035C /* PasswordAssembly.swift */,
+			);
+			path = PasswordModule;
+			sourceTree = "<group>";
+		};
+		52355BD32BC51D430027035C /* HomeModule */ = {
+			isa = PBXGroup;
+			children = (
+				52355BD62BC51D9E0027035C /* HomeViewController.swift */,
+				52355BD42BC51D9E0027035C /* HomePresenter.swift */,
+				52355BD52BC51D9E0027035C /* HomeRouter.swift */,
+				52355BD72BC51D9E0027035C /* HomeAssembly.swift */,
+			);
+			path = HomeModule;
+			sourceTree = "<group>";
+		};
+		52355BDE2BC51DE00027035C /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				52355BA32BC4FA860027035C /* FlowCoordinator.swift */,
+				52355BA52BC4FD470027035C /* AppCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		82CADDACE7EECC4E847DF58A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				751C7B79C9C4DF96CB1AC2CE /* Pods-Defer.debug.xcconfig */,
+				40469704FD72487DBE5E4D68 /* Pods-Defer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BB47898CF4CB80E5BBCFA1AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				044B298E0149BC2E40A236B2 /* Pods_Defer.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,9 +262,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52355B812BC45A6E0027035C /* Build configuration list for PBXNativeTarget "Defer" */;
 			buildPhases = (
+				4C9CDF39AD7FEC20F48485BD /* [CP] Check Pods Manifest.lock */,
 				52355B692BC45A6B0027035C /* Sources */,
 				52355B6A2BC45A6B0027035C /* Frameworks */,
 				52355B6B2BC45A6B0027035C /* Resources */,
+				C14242284A0021E56151AD7A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,14 +322,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4C9CDF39AD7FEC20F48485BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Defer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C14242284A0021E56151AD7A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Defer/Pods-Defer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Defer/Pods-Defer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Defer/Pods-Defer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		52355B692BC45A6B0027035C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52355BB32BC50DD30027035C /* LoginPresenter.swift in Sources */,
+				52355BC72BC50EDE0027035C /* CodePresenter.swift in Sources */,
+				52355BBF2BC50ED30027035C /* NumberPresenter.swift in Sources */,
+				52355BD12BC50EE80027035C /* PasswordViewController.swift in Sources */,
+				52355BA42BC4FA860027035C /* FlowCoordinator.swift in Sources */,
+				52355BAC2BC4FE8C0027035C /* AuthManager.swift in Sources */,
 				52355B752BC45A6B0027035C /* ViewController.swift in Sources */,
+				52355BDB2BC51D9E0027035C /* HomeAssembly.swift in Sources */,
+				52355BA62BC4FD470027035C /* AppCoordinator.swift in Sources */,
+				52355BDA2BC51D9E0027035C /* HomeViewController.swift in Sources */,
+				52355BD22BC50EE80027035C /* PasswordAssembly.swift in Sources */,
+				52355BCA2BC50EDE0027035C /* CodeAssembly.swift in Sources */,
+				52355BD92BC51D9E0027035C /* HomeRouter.swift in Sources */,
+				52355BA82BC4FE0F0027035C /* AppAssembly.swift in Sources */,
+				52355BDD2BC51DC90027035C /* AuthCoordinator.swift in Sources */,
+				52355BD82BC51D9E0027035C /* HomePresenter.swift in Sources */,
 				52355B712BC45A6B0027035C /* AppDelegate.swift in Sources */,
+				52355BCF2BC50EE80027035C /* PasswordPresenter.swift in Sources */,
+				52355BB52BC50DD30027035C /* LoginViewController.swift in Sources */,
 				52355B732BC45A6B0027035C /* SceneDelegate.swift in Sources */,
+				52355BB62BC50DD30027035C /* LoginAssembly.swift in Sources */,
+				52355BC92BC50EDE0027035C /* CodeViewController.swift in Sources */,
+				52355BC22BC50ED30027035C /* NumberAssembly.swift in Sources */,
+				52355BC12BC50ED30027035C /* NumberViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +447,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -278,7 +510,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -299,6 +531,7 @@
 		};
 		52355B822BC45A6E0027035C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 751C7B79C9C4DF96CB1AC2CE /* Pods-Defer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -330,6 +563,7 @@
 		};
 		52355B832BC45A6E0027035C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40469704FD72487DBE5E4D68 /* Pods-Defer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
