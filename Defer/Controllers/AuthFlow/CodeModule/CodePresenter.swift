@@ -10,7 +10,7 @@ import UIKit
 protocol CodePresenterProtocol: AnyObject {
     func viewDidLoaded()
     
-    func buttonTapped()
+    func sendCode(_ code: String)
 }
 
 final class CodePresenter {
@@ -31,9 +31,12 @@ extension CodePresenter: CodePresenterProtocol {
         // first setup view
     }
     
-    func buttonTapped() {
-        // TODO: запрос за статусом на сервер
-        authManager.changeAuthStatus(.authAndWaitingForTelegramPassoword)
-        completion()
+    func sendCode(_ code: String) {
+        view?.loadingStart()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.view?.loadingFinish(warning: nil)
+            self.authManager.changeAuthStatus(.authAndWaitingForTelegramPassword)
+            self.completion()
+        }
     }
 }

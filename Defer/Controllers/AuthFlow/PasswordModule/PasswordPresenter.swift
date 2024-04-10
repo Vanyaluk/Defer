@@ -33,7 +33,12 @@ extension PasswordPresenter: PasswordPresenterProtocol {
     
     func buttonTapped() {
         // TODO: запрос за статусом на сервер
-        authManager.changeAuthStatus(.authAndHaveTelegram)
-        completion()
+        
+        view?.loadingStart()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.view?.loadingFinish(warning: nil)
+            self.authManager.changeAuthStatus(.authAndHaveTelegram)
+            self.completion()
+        }
     }
 }

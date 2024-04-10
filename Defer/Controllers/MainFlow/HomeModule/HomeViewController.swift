@@ -15,6 +15,12 @@ protocol HomeViewProtocol: AnyObject {
 // MARK: - View Controller
 final class HomeViewController: UIViewController {
     
+    private lazy var label: UILabel = {
+        let label = UILabel()
+        label.text = "Hello, world!"
+        return label
+    }()
+    
     var presenter: HomePresenterProtocol?
 
     override func viewDidLoad() {
@@ -24,7 +30,12 @@ final class HomeViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = .yellow
+        view.backgroundColor = .systemBackground
+        
+        view.addSubview(label)
+        label.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 }
 

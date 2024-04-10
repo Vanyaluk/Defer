@@ -29,7 +29,7 @@ final class AuthCoordinator: FlowCoordinator {
             showNumberModule()
         case .authAndWaitingForTelegramCode:
             showCodeModule()
-        case .authAndWaitingForTelegramPassoword:
+        case .authAndWaitingForTelegramPassword:
             showPasswordModule()
         case .authAndHaveTelegram:
             completion()

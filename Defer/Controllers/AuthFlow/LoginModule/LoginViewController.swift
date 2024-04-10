@@ -100,6 +100,7 @@ final class LoginViewController: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = .systemBackground
+        navigationItem.hidesBackButton = true
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)

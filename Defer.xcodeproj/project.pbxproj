@@ -38,6 +38,8 @@
 		52550CEF2BC56386008CE849 /* OpenAPIRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 52550CEE2BC56386008CE849 /* OpenAPIRuntime */; };
 		52550CF22BC5639D008CE849 /* OpenAPIURLSession in Frameworks */ = {isa = PBXBuildFile; productRef = 52550CF12BC5639D008CE849 /* OpenAPIURLSession */; };
 		52550CF62BC567C6008CE849 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52550CF52BC567C6008CE849 /* KeychainManager.swift */; };
+		52E770832BC653E400657E8D /* UIVerifyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E770822BC653E400657E8D /* UIVerifyTextField.swift */; };
+		52E770852BC653ED00657E8D /* UIVerifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E770842BC653ED00657E8D /* UIVerifyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		52355BD72BC51D9E0027035C /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
 		52355BDC2BC51DC90027035C /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		52550CF52BC567C6008CE849 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		52E770822BC653E400657E8D /* UIVerifyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVerifyTextField.swift; sourceTree = "<group>"; };
+		52E770842BC653ED00657E8D /* UIVerifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVerifyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,7 @@
 				52355BC52BC50EDE0027035C /* CodeViewController.swift */,
 				52355BC32BC50EDE0027035C /* CodePresenter.swift */,
 				52355BC62BC50EDE0027035C /* CodeAssembly.swift */,
+				52E770812BC653CE00657E8D /* CodeField */,
 			);
 			path = CodeModule;
 			sourceTree = "<group>";
@@ -240,6 +245,15 @@
 				52355BA52BC4FD470027035C /* AppCoordinator.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		52E770812BC653CE00657E8D /* CodeField */ = {
+			isa = PBXGroup;
+			children = (
+				52E770822BC653E400657E8D /* UIVerifyTextField.swift */,
+				52E770842BC653ED00657E8D /* UIVerifyView.swift */,
+			);
+			path = CodeField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,7 +359,9 @@
 				52355BCF2BC50EE80027035C /* PasswordPresenter.swift in Sources */,
 				52355BB52BC50DD30027035C /* LoginViewController.swift in Sources */,
 				52355B732BC45A6B0027035C /* SceneDelegate.swift in Sources */,
+				52E770852BC653ED00657E8D /* UIVerifyView.swift in Sources */,
 				52355BB62BC50DD30027035C /* LoginAssembly.swift in Sources */,
+				52E770832BC653E400657E8D /* UIVerifyTextField.swift in Sources */,
 				52355BC92BC50EDE0027035C /* CodeViewController.swift in Sources */,
 				52355BC22BC50ED30027035C /* NumberAssembly.swift in Sources */,
 				52355BC12BC50ED30027035C /* NumberViewController.swift in Sources */,

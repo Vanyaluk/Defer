@@ -35,10 +35,10 @@ extension LoginPresenter: LoginPresenterProtocol {
     func buttonTapped() {
         // TODO: запрос за статусом на сервер
         view?.loadingStart()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            self?.view?.loadingFinish(warning: nil)
-            self?.authManager.changeAuthStatus(.authAndwaitingForTelegramNumber)
-            self?.completion()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.view?.loadingFinish(warning: nil)
+            self.authManager.changeAuthStatus(.authAndwaitingForTelegramNumber)
+            self.completion()
         }
     }
 }
