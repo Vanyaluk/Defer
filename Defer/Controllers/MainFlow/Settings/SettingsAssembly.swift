@@ -1,13 +1,13 @@
 //
-//  HomeAssembly.swift
+//  SettingsAssembly.swift
 //  Super easy dev
 //
-//  Created by vanyaluk on 09.04.2024
+//  Created by vanyaluk on 10.04.2024
 //
 
 import UIKit
 
-final class HomeAssembly {
+final class SettingsAssembly {
     
     let networkService: NetworkService
     let authManager: AuthManagerProtocol
@@ -17,10 +17,10 @@ final class HomeAssembly {
         self.authManager = authManager
     }
     
-    func assemble() -> HomeViewController {
-        let router = HomeRouter()
-        let viewController = HomeViewController()
-        let presenter = HomePresenter(view: viewController, router: router, networkService: networkService, authManager: authManager)
+    func assemble(completion: @escaping () -> Void) -> SettingsViewController {
+        let router = SettingsRouter()
+        let viewController = SettingsViewController()
+        let presenter = SettingsPresenter(view: viewController, router: router, networkService: networkService, authManager: authManager, completion: completion)
         
         viewController.presenter = presenter
         router.viewController = viewController

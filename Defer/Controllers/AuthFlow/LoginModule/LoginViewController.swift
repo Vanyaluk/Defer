@@ -164,7 +164,7 @@ final class LoginViewController: UIViewController {
     }
     
     @objc private func continueButtonTapped() {
-        presenter?.buttonTapped()
+        presenter?.loginUser(login: loginField.text ?? "", password: passwordField.text ?? "")
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {

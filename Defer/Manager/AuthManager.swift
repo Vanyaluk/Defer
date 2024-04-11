@@ -20,8 +20,8 @@ protocol AuthManagerProtocol {
     /// Получить статус входа
     func getAuthStatus() -> AuthStatus
     
-    /// Изменить статус входа
-    func changeAuthStatus(_ newValue: AuthStatus)
+    /// Задать новое значение для статуса входа
+    func setAuthStatus(_ newValue: AuthStatus)
 }
 
 // MARK: - Менеджер входа в приложение
@@ -29,7 +29,19 @@ final class AuthManager: AuthManagerProtocol {
     
     private var authStatus: AuthStatus = .notAuth
     
-    func changeAuthStatus(_ newValue: AuthStatus) {
+    init() {
+        updateAuthStatusFromKeychain()
+    }
+    
+    private func updateAuthStatusFromKeychain() {
+        if let _ = KeychainManager.shared.getKey() {
+            authStatus = .authAndHaveTelegram
+        } else {
+            authStatus = .notAuth
+        }
+    }
+    
+    func setAuthStatus(_ newValue: AuthStatus) {
         authStatus = newValue
     }
     

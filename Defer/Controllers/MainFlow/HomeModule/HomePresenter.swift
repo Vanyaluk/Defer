@@ -15,14 +15,20 @@ final class HomePresenter {
     weak var view: HomeViewProtocol?
     var router: HomeRouterInput
 
-    init(view: HomeViewProtocol, router: HomeRouterInput) {
+    let networkService: NetworkService
+    var authManager: AuthManagerProtocol
+    
+    init(view: HomeViewProtocol? = nil, router: HomeRouterInput, networkService: NetworkService, authManager: AuthManagerProtocol) {
         self.view = view
         self.router = router
+        self.networkService = networkService
+        self.authManager = authManager
     }
 }
 
 extension HomePresenter: HomePresenterProtocol {
+    
     func viewDidLoaded() {
-        // first setup view
+        
     }
 }

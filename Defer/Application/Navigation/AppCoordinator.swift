@@ -11,10 +11,12 @@ final class AppCoordinator: FlowCoordinator {
     
     private weak var window: UIWindow?
     private let authManager: AuthManagerProtocol
+    private let networkService: NetworkService
     
-    init(window: UIWindow?, authManager: AuthManagerProtocol) {
+    init(window: UIWindow?, authManager: AuthManagerProtocol, networkService: NetworkService) {
         self.window = window
         self.authManager = authManager
+        self.networkService = networkService
     }
     
     func start() {
@@ -31,8 +33,10 @@ final class AppCoordinator: FlowCoordinator {
     }
     
     private func startMainFlow() {
-        let vc = HomeAssembly().assemble()
-        window?.rootViewController = vc
+        let tabBar = TabBarController(networkService: networkService, authManager: authManager) {
+            self.start()
+        }
+        window?.rootViewController = tabBar
         window?.makeKeyAndVisible()
     }
     
@@ -41,7 +45,7 @@ final class AppCoordinator: FlowCoordinator {
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
         
-        let authCoordinator = AuthCoordinator(authManager: authManager, navigationController: vc) {
+        let authCoordinator = AuthCoordinator(authManager: authManager, networkService: networkService, navigationController: vc) {
             self.start()
         }
         authCoordinator.start()

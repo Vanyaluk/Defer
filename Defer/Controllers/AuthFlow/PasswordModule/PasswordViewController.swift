@@ -145,7 +145,7 @@ final class PasswordViewController: UIViewController {
     }
     
     @objc private func continueButtonTapped() {
-        presenter?.buttonTapped()
+        presenter?.sendPassword(passwordField.text ?? "")
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {

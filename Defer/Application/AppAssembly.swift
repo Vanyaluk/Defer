@@ -10,9 +10,10 @@ import UIKit
 final class AppAssembly {
     
     static func assemble(window: UIWindow?) -> FlowCoordinator {
+        let networkService = NetworkService()
         let authManager = AuthManager()
         
-        let appCoordinator = AppCoordinator(window: window, authManager: authManager)
+        let appCoordinator = AppCoordinator(window: window, authManager: authManager, networkService: networkService)
         return appCoordinator
     }
 }

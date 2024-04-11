@@ -33,7 +33,7 @@ final class UIVerifyView: UIView {
         fieldStack.spacing = 5
         fieldStack.distribution = .fillEqually
         
-        for number in 0...5 {
+        for number in 0...4 {
             let field = UIVerifyTextField()
             field.tag = number
             field.fieldDelegate = self

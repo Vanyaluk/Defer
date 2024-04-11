@@ -21,6 +21,10 @@ protocol KeychainManagerProtocol {
 
 final class KeychainManager: KeychainManagerProtocol {
     
+    static let shared: KeychainManagerProtocol = KeychainManager()
+    
+    private init() {}
+    
     private let keychainAccount = "DeferAppAccount"
     
     func saveKey(_ value: String) {

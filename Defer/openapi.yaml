@@ -1,0 +1,566 @@
+openapi: 3.0.1
+info:
+  title: IServiceBackend
+  version: '1.0'
+servers:
+  - url: https://smm.observer.freemyip.com
+paths:
+  /api/auth/login:
+    post:
+      tags:
+        - Auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequestData'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequestData'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/LoginRequestData'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LoginResponseData'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponseData'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponseData'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+  /api/ping:
+    get:
+      tags:
+        - IServiceBackend
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/telegram/status:
+    get:
+      tags:
+        - Telegram
+      responses:
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TelegramStatusResponseData'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TelegramStatusResponseData'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TelegramStatusResponseData'
+  /api/telegram/phone:
+    post:
+      tags:
+        - Telegram
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetPhoneNumberRequestData'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SetPhoneNumberRequestData'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SetPhoneNumberRequestData'
+      responses:
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TelegramStatusResponseData'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TelegramStatusResponseData'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TelegramStatusResponseData'
+  /api/telegram/code:
+    post:
+      tags:
+        - Telegram
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetCodeRequestData'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SetCodeRequestData'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SetCodeRequestData'
+      responses:
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TelegramStatusResponseData'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TelegramStatusResponseData'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TelegramStatusResponseData'
+  /api/telegram/password:
+    post:
+      tags:
+        - Telegram
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetPasswordRequestData'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SetPasswordRequestData'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SetPasswordRequestData'
+      responses:
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TelegramStatusResponseData'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TelegramStatusResponseData'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TelegramStatusResponseData'
+  /api/telegram:
+    patch:
+      tags:
+        - Telegram
+      responses:
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TelegramStatusResponseData'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TelegramStatusResponseData'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TelegramStatusResponseData'
+  '/api/tg-files/{fileId}':
+    get:
+      tags:
+        - TelegramFiles
+      parameters:
+        - name: fileId
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+        '302':
+          description: Redirect
+  /api/tg-interaction/available_to_write_channels:
+    get:
+      tags:
+        - TgInteraction
+      responses:
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/AvailableToWriteChannelsResponseData'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AvailableToWriteChannelsResponseData'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/AvailableToWriteChannelsResponseData'
+  /api/tg-interaction/scheduled_posts:
+    get:
+      tags:
+        - TgInteraction
+      responses:
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ScheduledPostsResponseData'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScheduledPostsResponseData'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ScheduledPostsResponseData'
+    delete:
+      tags:
+        - TgInteraction
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteScheduledPostsRequestData'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DeleteScheduledPostsRequestData'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DeleteScheduledPostsRequestData'
+      responses:
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+        '200':
+          description: Success
+  /api/tg-interaction/create_scheduled_post:
+    put:
+      tags:
+        - TgInteraction
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateScheduledPostRequestData'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CreateScheduledPostRequestData'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CreateScheduledPostRequestData'
+      responses:
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErrorReason'
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CreateScheduledPostResponseData'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateScheduledPostResponseData'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CreateScheduledPostResponseData'
+components:
+  schemas:
+    AvailableToWriteChannelsResponseData:
+      required:
+        - channels
+      type: object
+      properties:
+        channels:
+          type: array
+          items:
+            $ref: '#/components/schemas/Channel'
+      additionalProperties: false
+    Channel:
+      required:
+        - id
+        - supergroupId
+        - title
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        supergroupId:
+          type: integer
+          format: int64
+        title:
+          minLength: 1
+          type: string
+        photoId:
+          type: string
+          nullable: true
+        inviteLink:
+          type: string
+          nullable: true
+      additionalProperties: false
+    CreateScheduledPostRequestData:
+      required:
+        - channelId
+        - date
+        - text
+      type: object
+      properties:
+        channelId:
+          type: integer
+          format: int64
+        text:
+          minLength: 1
+          type: string
+        date:
+          type: integer
+          format: int32
+      additionalProperties: false
+    CreateScheduledPostResponseData:
+      required:
+        - messageId
+      type: object
+      properties:
+        messageId:
+          type: integer
+          format: int64
+      additionalProperties: false
+    DeleteScheduledPostsRequestData:
+      required:
+        - channelId
+        - messageIds
+      type: object
+      properties:
+        channelId:
+          type: integer
+          format: int64
+        messageIds:
+          type: array
+          items:
+            type: integer
+            format: int64
+      additionalProperties: false
+    ErrorReason:
+      type: object
+      properties:
+        reason:
+          type: string
+          nullable: true
+      additionalProperties: false
+    LoginRequestData:
+      required:
+        - login
+        - password
+      type: object
+      properties:
+        login:
+          minLength: 1
+          type: string
+        password:
+          minLength: 1
+          type: string
+      additionalProperties: false
+    LoginResponseData:
+      required:
+        - token
+      type: object
+      properties:
+        token:
+          minLength: 1
+          type: string
+      additionalProperties: false
+    Post:
+      required:
+        - channel
+        - date
+        - id
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        channel:
+          $ref: '#/components/schemas/Channel'
+        date:
+          type: integer
+          format: int32
+        text:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ScheduledPostsResponseData:
+      required:
+        - posts
+      type: object
+      properties:
+        posts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Post'
+      additionalProperties: false
+    SetCodeRequestData:
+      required:
+        - code
+      type: object
+      properties:
+        code:
+          minLength: 1
+          type: string
+      additionalProperties: false
+    SetPasswordRequestData:
+      required:
+        - password
+      type: object
+      properties:
+        password:
+          minLength: 1
+          type: string
+      additionalProperties: false
+    SetPhoneNumberRequestData:
+      required:
+        - phone
+      type: object
+      properties:
+        phone:
+          minLength: 1
+          type: string
+      additionalProperties: false
+    TelegramState:
+      enum:
+        - Unknown
+        - WaitingForPhoneNumber
+        - WaitingForCode
+        - WaitingForPassword
+        - Ready
+      type: string
+    TelegramStatusResponseData:
+      required:
+        - state
+      type: object
+      properties:
+        state:
+          $ref: '#/components/schemas/TelegramState'
+      additionalProperties: false

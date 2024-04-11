@@ -90,6 +90,10 @@ final class NumberViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         continueButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
         
+        if let _ = KeychainManager.shared.getKey() {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "rectangle.portrait.and.arrow.forward"), style: .done, target: self, action: #selector(logoutButtonTapped))
+        }
+        
         numberField.delegate = self
         
         view.addSubview(contentView)
@@ -142,8 +146,12 @@ final class NumberViewController: UIViewController {
         view.endEditing(true)
     }
     
+    @objc private func logoutButtonTapped() {
+        presenter?.logoutAccount()
+    }
+    
     @objc private func continueButtonTapped() {
-        presenter?.buttonTapped()
+        presenter?.buttonTapped(number: numberField.text ?? "")
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
