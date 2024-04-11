@@ -42,12 +42,12 @@ extension NumberPresenter: NumberPresenterProtocol {
         if isValid(text: number) {
             sentNumberToTelegram(number: number)
         } else {
-            view?.loadingFinish(warning: "Неверный формат номера")
+            view?.loadingFinish(warning: "Введите номер целиком")
         }
     }
     
     private func isValid(text: String) -> Bool {
-        return true
+        return text.count == 18
     }
     
     private func sentNumberToTelegram(number: String) {
@@ -60,12 +60,12 @@ extension NumberPresenter: NumberPresenterProtocol {
                     }
                 } else {
                     DispatchQueue.main.async {
-                        self.view?.loadingFinish(warning: "Неверный запрос в Telegram")
+                        self.view?.loadingFinish(warning: "Такого номера не существует.")
                     }
                 }
             } catch {
                 DispatchQueue.main.async {
-                    self.view?.loadingFinish(warning: "Ошибка при запросе в Telegram")
+                    self.view?.loadingFinish(warning: "Приложение глюкнулось.")
                 }
             }
         }

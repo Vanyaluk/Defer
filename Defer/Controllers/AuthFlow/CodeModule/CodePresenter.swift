@@ -58,7 +58,7 @@ extension CodePresenter: CodePresenterProtocol {
                     }
                 } else {
                     DispatchQueue.main.async {
-                        self.view?.loadingFinish(warning: "Неверный запрос в Telegram")
+                        self.view?.loadingFinish(warning: "Неверный код.")
                     }
                 }
             } catch {

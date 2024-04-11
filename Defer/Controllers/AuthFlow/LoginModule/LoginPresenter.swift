@@ -37,6 +37,11 @@ extension LoginPresenter: LoginPresenterProtocol {
     func loginUser(login: String, password: String) {
         view?.loadingStart()
         
+        if let temp = isValid(login: login, password: password) {
+            view?.loadingFinish(warning: temp)
+            return
+        }
+        
         Task(priority: .medium) {
             do {
                 let token = try await networkService.registration(login: login, password: password)
@@ -44,7 +49,7 @@ extension LoginPresenter: LoginPresenterProtocol {
                     checkTelegramIsLinked(with: token)
                 } else {
                     DispatchQueue.main.async {
-                        self.view?.loadingFinish(warning: "Ошибка на сервере. Мы чиним.")
+                        self.view?.loadingFinish(warning: "Такой аккаунт существует. Неверный пароль")
                     }
                 }
             } catch {
@@ -53,6 +58,12 @@ extension LoginPresenter: LoginPresenterProtocol {
                 }
             }
         }
+    }
+    
+    private func isValid(login: String, password: String) -> String? {
+        if login.count < 5 { return "Логин должен быть 5 и больше символов" }
+        if password.count < 6 { return "Пароль должен быть 6 и больше символов" }
+        return nil
     }
     
     private func checkTelegramIsLinked(with token: String) {

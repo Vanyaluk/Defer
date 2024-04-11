@@ -153,22 +153,18 @@ extension CodeViewController: CodeViewProtocol {
     func loadingStart() {
         view.endEditing(true)
         warningLabel.isHidden = true
-        UIView.animate(withDuration: 0.3) {
-            self.verifyView.alpha = 0
-        } completion: { done in
-            self.activityIndicator.startAnimating()
-        }
+        activityIndicator.startAnimating()
+        verifyView.alpha = 0
     }
     
     func loadingFinish(warning: String?) {
-        activityIndicator.stopAnimating()
-        UIView.animate(withDuration: 0.3) {
-            self.verifyView.alpha = 1
-        }
+        verifyView.alpha = 1
         if let warning {
             warningLabel.text = warning
             warningLabel.isHidden = false
         }
+        
+        activityIndicator.stopAnimating()
         
         verifyView.clearFields()
         verifyView.startAgain()

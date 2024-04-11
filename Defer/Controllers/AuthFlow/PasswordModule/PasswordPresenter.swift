@@ -58,7 +58,7 @@ extension PasswordPresenter: PasswordPresenterProtocol {
                     }
                 } else {
                     DispatchQueue.main.async {
-                        self.view?.loadingFinish(warning: "Неверный запрос в Telegram")
+                        self.view?.loadingFinish(warning: "Неверный пароль.")
                     }
                 }
             } catch {
