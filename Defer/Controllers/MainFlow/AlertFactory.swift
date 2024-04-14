@@ -14,4 +14,15 @@ class AlertFactory {
         alert.addAction(action)
         return alert
     }
+    
+    func deletingActionSheet(title: String, comletion: @escaping () -> ()) -> UIAlertController {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
+        let actionDelete = UIAlertAction(title: "Удалить", style: .destructive) { alert in
+            comletion()
+        }
+        let dismissAction = UIAlertAction(title: "Отмена", style: .cancel)
+        alert.addAction(actionDelete)
+        alert.addAction(dismissAction)
+        return alert
+    }
 }

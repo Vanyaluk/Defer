@@ -8,9 +8,9 @@
 import UIKit
 
 protocol PostPresenterProtocol: AnyObject {
-    func viewDidLoaded()
-    
     func deletePost(channelId: Int64, messageId: Int64)
+    
+    func showDeletingSheet(channelId: Int64, messageId: Int64)
 }
 
 final class PostPresenter {
@@ -29,8 +29,10 @@ final class PostPresenter {
 }
 
 extension PostPresenter: PostPresenterProtocol {
-    func viewDidLoaded() {
-        // first setup view
+    func showDeletingSheet(channelId: Int64, messageId: Int64) {
+        router.presentSheet { [weak self] in
+            self?.deletePost(channelId: channelId, messageId: messageId)
+        }
     }
     
     func deletePost(channelId: Int64, messageId: Int64) {

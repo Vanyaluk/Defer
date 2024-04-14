@@ -83,7 +83,6 @@ final class PostViewController: UIViewController {
         super.viewDidLoad()
         configureTextsForLabels()
         setupUI()
-        presenter?.viewDidLoaded()
     }
     
     private func setupUI() {
@@ -159,7 +158,7 @@ final class PostViewController: UIViewController {
     }
     
     @objc private func deleteButtonTapped() {
-        presenter?.deletePost(channelId: post.channel.id, messageId: post.id)
+        presenter?.showDeletingSheet(channelId: post.channel.id, messageId: post.id)
     }
 }
 

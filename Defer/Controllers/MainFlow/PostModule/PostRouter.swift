@@ -9,6 +9,8 @@ import UIKit
 
 protocol PostRouterInput {
     func dismissView()
+    
+    func presentSheet(completion: @escaping () -> ())
 }
 
 final class PostRouter: PostRouterInput {
@@ -16,5 +18,10 @@ final class PostRouter: PostRouterInput {
     
     func dismissView() {
         viewController?.navigationController?.popViewController(animated: true)
+    }
+    
+    func presentSheet(completion: @escaping () -> ()) {
+        let alert = AlertFactory().deletingActionSheet(title: "Удалить пост?", comletion: completion)
+        viewController?.present(alert, animated: true)
     }
 }

@@ -62,6 +62,14 @@ final class HomeViewController: UIViewController {
         return button
     }()
     
+    private lazy var emptyDayLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Нет сообщений"
+        label.textColor = .secondaryLabel
+        label.isHidden = true
+        return label
+    }()
+    
     var presenter: HomePresenterProtocol?
     
     private var nowdayPosts = [Components.Schemas.Post]()
@@ -110,6 +118,11 @@ final class HomeViewController: UIViewController {
             make.height.width.equalTo(50)
             make.trailing.equalToSuperview().inset(20)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(13)
+        }
+        
+        tableMessagesView.addSubview(emptyDayLabel)
+        emptyDayLabel.snp.makeConstraints { make in
+            make.centerY.centerX.equalToSuperview()
         }
         
         setWeekView()
@@ -174,11 +187,14 @@ final class HomeViewController: UIViewController {
 
 // MARK: - View Protocol Realization
 extension HomeViewController: HomeViewProtocol {
-    func loadingStart() {}
+    func loadingStart() {
+        
+    }
     
     func loadingFinish(warning: String?) {}
     
     func showPosts(posts: [Components.Schemas.Post]) {
+        emptyDayLabel.isHidden = !posts.isEmpty
         refreshControl.endRefreshing()
         nowdayPosts.removeAll()
         nowdayPosts.append(contentsOf: posts)
