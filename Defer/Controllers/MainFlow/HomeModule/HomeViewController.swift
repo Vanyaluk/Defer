@@ -14,6 +14,8 @@ protocol HomeViewProtocol: AnyObject {
     func loadingFinish(warning: String?)
     
     func showPosts(posts: [Components.Schemas.Post])
+    
+    func showFetchedAvatars()
 }
 
 // MARK: - View Controller
@@ -172,18 +174,18 @@ final class HomeViewController: UIViewController {
 
 // MARK: - View Protocol Realization
 extension HomeViewController: HomeViewProtocol {
-    func loadingStart() {
-        
-    }
+    func loadingStart() {}
     
-    func loadingFinish(warning: String?) {
-        
-    }
+    func loadingFinish(warning: String?) {}
     
     func showPosts(posts: [Components.Schemas.Post]) {
         refreshControl.endRefreshing()
         nowdayPosts.removeAll()
         nowdayPosts.append(contentsOf: posts)
+        tableMessagesView.reloadData()
+    }
+    
+    func showFetchedAvatars() {
         tableMessagesView.reloadData()
     }
 }
@@ -195,8 +197,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TableMessageCell.id, for: indexPath) as? TableMessageCell else { return UITableViewCell()}
         
-        cell.configure(nowdayPosts[indexPath.row])
-        cell.setWarning(isSetWarning(post: nowdayPosts[indexPath.row]))
+        let post = nowdayPosts[indexPath.row]
+        cell.configure(post, imageData: presenter?.avatars[post.channel.photoId ?? ""] ?? nil)
+        cell.setWarning(isSetWarning(post: post))
         cell.viewController = self
         
         return cell

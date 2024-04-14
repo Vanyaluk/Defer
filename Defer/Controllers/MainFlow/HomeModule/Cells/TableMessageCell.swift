@@ -122,7 +122,7 @@ class TableMessageCell: UITableViewCell {
         }
     }
     
-    func configure(_ temp: Components.Schemas.Post) {
+    func configure(_ temp: Components.Schemas.Post, imageData: Data?) {
         post = temp
         
         nameLabel.text = temp.channel.title
@@ -132,20 +132,7 @@ class TableMessageCell: UITableViewCell {
         let min = calendar.component(.minute, from: Date(timeIntervalSince1970: TimeInterval(temp.date)))
         dateLabel.text = "\(fn(hour)):\(fn(min))"
         messageLabel.text = temp.text ?? ""
-        
-        if let id = temp.channel.photoId {
-            networkService?.getChannelPhoto(id: id, completion: { idS, data in
-                if let data {
-                    DispatchQueue.main.async {
-                        if self.post?.channel.photoId == idS {
-                            self.logoView.image = UIImage(data: data)
-                        }
-                    }
-                }
-            })
-        } else {
-            self.logoView.image = nil
-        }
+        logoView.image = UIImage(data: imageData ?? Data())
     }
     
     private func fn(_ number: Int) -> String {

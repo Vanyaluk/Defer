@@ -8,6 +8,8 @@
 import UIKit
 
 protocol HomePresenterProtocol: AnyObject {
+    var avatars: [String: Data] { get }
+    
     func fetchAllPostsAndShow(on date: Date)
     
     func showPostsFromCash(on date: Date)
@@ -17,6 +19,8 @@ protocol HomePresenterProtocol: AnyObject {
     func showNewPost(on selectedDate: Date)
     
     func showWarningAlert()
+    
+    func loadAvatars()
 }
 
 final class HomePresenter {
@@ -25,6 +29,12 @@ final class HomePresenter {
 
     let networkService: NetworkService
     var authManager: AuthManagerProtocol
+    
+    var avatars: [String: Data] {
+        get {
+            networkService.imageCash
+        }
+    }
     
     init(view: HomeViewProtocol? = nil, router: HomeRouterInput, networkService: NetworkService, authManager: AuthManagerProtocol) {
         self.view = view
@@ -43,6 +53,7 @@ extension HomePresenter: HomePresenterProtocol {
                 if result {
                     DispatchQueue.main.async {
                         self.showPostsFromCash(on: date)
+                        self.loadAvatars()
                     }
                 } else {
                     DispatchQueue.main.async { print("RootInteractorOutput Ошибка t") }
@@ -55,7 +66,7 @@ extension HomePresenter: HomePresenterProtocol {
     
     func showPostsFromCash(on date: Date) {
         // сделать по дням
-        var posts = networkService.getCahesPosts(on: date)
+        var posts = networkService.getCashesPosts(on: date)
         posts.sort { first, second in
             Date(timeIntervalSince1970: TimeInterval(first.date)) < Date(timeIntervalSince1970: TimeInterval(second.date))
         }
@@ -76,5 +87,21 @@ extension HomePresenter: HomePresenterProtocol {
     
     func showWarningAlert() {
         router.presentWarningAlert()
+    }
+    
+    func loadAvatars() {
+        let group = DispatchGroup()
+        networkService.imageCash.removeAll()
+        
+        networkService.getCashesPosts().forEach { post in
+            group.enter()
+            networkService.loadChannelPhoto(id: post.channel.photoId ?? nil) {
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: .main) {
+            self.view?.showFetchedAvatars()
+        }
     }
 }

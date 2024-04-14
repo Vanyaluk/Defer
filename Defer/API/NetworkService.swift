@@ -33,7 +33,7 @@ class NetworkService {
     
     private var posts = [Components.Schemas.Post]()
     
-    private var imageCash = [String: Data]()
+    public var imageCash = [String: Data]()
     
     var client = Client(serverURL: try! Servers.server1(), transport: URLSessionTransport())
     
@@ -151,11 +151,15 @@ class NetworkService {
     
     
     /// подкрузка постов по дате из кеша
-    func getCahesPosts(on date: Date) -> [Components.Schemas.Post] {
-        let dayPosts = posts.filter { post in
-            Calendar.current.dateComponents([.year, .month, .day], from: date) == Calendar.current.dateComponents([.year, .month, .day], from: Date(timeIntervalSince1970: TimeInterval(post.date)))
+    func getCashesPosts(on date: Date? = nil) -> [Components.Schemas.Post] {
+        if let date {
+            let dayPosts = posts.filter { post in
+                Calendar.current.dateComponents([.year, .month, .day], from: date) == Calendar.current.dateComponents([.year, .month, .day], from: Date(timeIntervalSince1970: TimeInterval(post.date)))
+            }
+            return dayPosts
+        } else {
+            return posts
         }
-        return dayPosts
     }
     
     /// выход из сеанса
@@ -173,27 +177,32 @@ class NetworkService {
     
     
     /// запрос на фото канала
-    func getChannelPhoto(id: String, completion: @escaping (String, Data?) -> Void) {
-        if let image = imageCash[id] {
-            completion(id, image)
+    func loadChannelPhoto(id: String?, completion: @escaping () -> Void) {
+        guard let id else {
+            completion()
             return
         }
         
-        let stringURL = "https://prod-uuu-backend.freemyip.com/api/tg-files/\(id)"
+        if let image = imageCash[id] {
+            completion()
+            return
+        }
+        
+        let stringURL = "https://smm.observer.freemyip.com/api/tg-files/\(id)"
         if let url = URL(string: stringURL) {
             var request = URLRequest(url: url)
             request.allHTTPHeaderFields = [
                 "Authorization": "Bearer \(bearerToken)"
             ]
             URLSession.shared.dataTask(with: request) { data, response, error in
-                if error != nil {
-                } else {
-                    if let data = data {
-                        self.imageCash[id] = data
-                        completion(id, data)
-                    }
+                if let data = data {
+                    self.imageCash[id] = data
                 }
+                completion()
+                return
             }.resume()
+        } else {
+            completion()
         }
     }
     
