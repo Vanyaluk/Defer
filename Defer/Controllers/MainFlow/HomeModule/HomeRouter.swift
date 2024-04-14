@@ -11,6 +11,8 @@ protocol HomeRouterInput {
     func pushPostModule(post: Components.Schemas.Post, completion: @escaping () -> ())
     
     func presentNewPostModule(completion: @escaping () -> Void)
+    
+    func presentWarningAlert()
 }
 
 final class HomeRouter: HomeRouterInput {
@@ -33,5 +35,10 @@ final class HomeRouter: HomeRouterInput {
     func presentNewPostModule(completion: @escaping () -> Void) {
         let vc = UINavigationController(rootViewController: newPostAssembly.assemble(completion: completion))
         viewController?.present(vc, animated: true)
+    }
+    
+    func presentWarningAlert() {
+        let alert = AlertFactory().warningAlert(message: "Два поста из одного канала находятся очень близко друг к другу. Возможно вы допустили ошибку.")
+        viewController?.present(alert, animated: true)
     }
 }

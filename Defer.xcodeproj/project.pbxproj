@@ -57,6 +57,7 @@
 		527D35172BCBCFED00BA5B0B /* ChannelsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D35132BCBCFED00BA5B0B /* ChannelsRouter.swift */; };
 		527D35182BCBCFED00BA5B0B /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D35142BCBCFED00BA5B0B /* ChannelsViewController.swift */; };
 		527D35192BCBCFED00BA5B0B /* ChannelsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D35152BCBCFED00BA5B0B /* ChannelsAssembly.swift */; };
+		527D351C2BCBDBAA00BA5B0B /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D351B2BCBDBAA00BA5B0B /* AlertFactory.swift */; };
 		52D43D602BC85ED9006ED01D /* DateViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D43D5F2BC85ED9006ED01D /* DateViewCell.swift */; };
 		52D43D622BC85EFF006ED01D /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D43D612BC85EFF006ED01D /* CalendarHelper.swift */; };
 		52E770832BC653E400657E8D /* UIVerifyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E770822BC653E400657E8D /* UIVerifyTextField.swift */; };
@@ -115,6 +116,7 @@
 		527D35132BCBCFED00BA5B0B /* ChannelsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRouter.swift; sourceTree = "<group>"; };
 		527D35142BCBCFED00BA5B0B /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
 		527D35152BCBCFED00BA5B0B /* ChannelsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsAssembly.swift; sourceTree = "<group>"; };
+		527D351B2BCBDBAA00BA5B0B /* AlertFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
 		52D43D5F2BC85ED9006ED01D /* DateViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewCell.swift; sourceTree = "<group>"; };
 		52D43D612BC85EFF006ED01D /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		52E770822BC653E400657E8D /* UIVerifyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVerifyTextField.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				5269DB5F2BC6E559003B649E /* TabBarController.swift */,
+				527D351B2BCBDBAA00BA5B0B /* AlertFactory.swift */,
 				52355BD32BC51D430027035C /* HomeModule */,
 				527D34FD2BCB9F1D00BA5B0B /* PostModule */,
 				527D35072BCBAB7100BA5B0B /* NewPostModule */,
@@ -472,6 +475,7 @@
 				52E7708E2BC6680500657E8D /* NetworkService.swift in Sources */,
 				5269DB682BC6E670003B649E /* SettingsViewController.swift in Sources */,
 				52355BAC2BC4FE8C0027035C /* AuthManager.swift in Sources */,
+				527D351C2BCBDBAA00BA5B0B /* AlertFactory.swift in Sources */,
 				52355B752BC45A6B0027035C /* ViewController.swift in Sources */,
 				52355BDB2BC51D9E0027035C /* HomeAssembly.swift in Sources */,
 				52355BA62BC4FD470027035C /* AppCoordinator.swift in Sources */,

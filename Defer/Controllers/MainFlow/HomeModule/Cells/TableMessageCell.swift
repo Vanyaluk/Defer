@@ -53,10 +53,13 @@ class TableMessageCell: UITableViewCell {
     private lazy var warningNearButton: UIButton = {
         let button = UIButton()
         button.setTitle("⚠️", for: .normal)
+        button.addTarget(self, action: #selector(warningNearButtonTapped), for: .touchUpInside)
         return button
     }()
     
     var networkService: NetworkService?
+    
+    weak var viewController: HomeViewController?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -155,6 +158,10 @@ class TableMessageCell: UITableViewCell {
     
     func setWarning(_ bool: Bool) {
         warningNearButton.isHidden = !bool
+    }
+    
+    @objc private func warningNearButtonTapped() {
+        viewController?.warningButtonTapped()
     }
 }
 

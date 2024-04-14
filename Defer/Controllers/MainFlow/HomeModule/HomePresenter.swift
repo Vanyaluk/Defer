@@ -15,6 +15,8 @@ protocol HomePresenterProtocol: AnyObject {
     func showPost(post: Components.Schemas.Post, selectedDate: Date)
     
     func showNewPost(on selectedDate: Date)
+    
+    func showWarningAlert()
 }
 
 final class HomePresenter {
@@ -70,5 +72,9 @@ extension HomePresenter: HomePresenterProtocol {
         router.presentNewPostModule { [weak self] in
             self?.fetchAllPostsAndShow(on: selectedDate)
         }
+    }
+    
+    func showWarningAlert() {
+        router.presentWarningAlert()
     }
 }

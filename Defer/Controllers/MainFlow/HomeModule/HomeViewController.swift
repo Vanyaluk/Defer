@@ -19,6 +19,8 @@ protocol HomeViewProtocol: AnyObject {
 // MARK: - View Controller
 final class HomeViewController: UIViewController {
     
+    private let timeIntervalBetweenMessages: TimeInterval = 1800 // seconds
+    
     private lazy var collectionDatesView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
@@ -134,18 +136,11 @@ final class HomeViewController: UIViewController {
         var warnings: Int = 0
         nowdayPosts.forEach { post in
             let postDate = Date(timeIntervalSince1970: TimeInterval(post.date))
-            if cellDate.addingTimeInterval(-3600) < postDate && cellDate.addingTimeInterval(3600) > postDate {
-                if post.channel.id == post.channel.id {
-                    warnings += 1
-                }
-                
+            if cellDate.addingTimeInterval(-timeIntervalBetweenMessages) < postDate && cellDate.addingTimeInterval(timeIntervalBetweenMessages) > postDate {
+                if post.channel.id == post.channel.id { warnings += 1 }
             }
         }
-        
-        if warnings > 1 {
-            isWarning = true
-        }
-        
+        if warnings > 1 { isWarning = true }
         return isWarning
     }
     
@@ -167,6 +162,10 @@ final class HomeViewController: UIViewController {
     
     @objc private func addNewPostButtonTapped() {
         presenter?.showNewPost(on: selectedDate)
+    }
+    
+    func warningButtonTapped() {
+        presenter?.showWarningAlert()
     }
 }
 
@@ -198,6 +197,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.configure(nowdayPosts[indexPath.row])
         cell.setWarning(isSetWarning(post: nowdayPosts[indexPath.row]))
+        cell.viewController = self
         
         return cell
     }
