@@ -22,6 +22,12 @@ final class ChannelsViewController: UIViewController {
         return table
     }()
     
+    private lazy var loader: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView()
+        view.hidesWhenStopped = true
+        return view
+    }()
+    
     private var channels = [Components.Schemas.Channel]()
     
     var presenter: ChannelsPresenterProtocol?
@@ -44,12 +50,19 @@ final class ChannelsViewController: UIViewController {
         tableView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
         }
+        
+        loader.startAnimating()
+        view.addSubview(loader)
+        loader.snp.makeConstraints { make in
+            make.centerX.centerY.equalToSuperview()
+        }
     }
 }
 
 // MARK: - View Protocol Realization
 extension ChannelsViewController: ChannelsViewProtocol {
     func showChannels(fetched: [Components.Schemas.Channel]) {
+        loader.stopAnimating()
         channels.removeAll()
         channels.append(contentsOf: fetched)
         tableView.reloadData()

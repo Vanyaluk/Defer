@@ -11,6 +11,8 @@ import SnapKit
 // MARK: - View Protocol
 protocol NewPostViewProtocol: AnyObject {
     func setChannel(id: Int64, channel: String)
+    
+    func startLoading()
 }
 
 // MARK: - View Controller
@@ -130,6 +132,8 @@ final class NewPostViewController: UIViewController {
     
     @objc private func saveButtonTapped() {
         guard let channelId else { return }
+        guard !postTextView.text.replacingOccurrences(of: " ", with: "").isEmpty else { return }
+        guard datePicker.date > .now else { return }
         presenter?.saveNewPost(channelId: channelId, text: postTextView.text, date: datePicker.date)
     }
     
@@ -138,8 +142,8 @@ final class NewPostViewController: UIViewController {
     }
     
     @objc private func hideKeyboard() {
-            view.endEditing(true)
-        }
+        view.endEditing(true)
+    }
 }
 
 // MARK: - View Protocol Realization
@@ -147,5 +151,14 @@ extension NewPostViewController: NewPostViewProtocol {
     func setChannel(id: Int64, channel: String) {
         channelId = id
         chanelLabel.text = channel
+    }
+    
+    func startLoading() {
+        navigationItem.rightBarButtonItem?.isEnabled = false
+        navigationItem.leftBarButtonItem?.isEnabled = false
+        loader.startAnimating()
+        datePicker.alpha = 0
+        contentView1.alpha = 0
+        postTextView.alpha = 0
     }
 }

@@ -165,6 +165,8 @@ final class PostViewController: UIViewController {
 // MARK: - View Protocol Realization
 extension PostViewController: PostViewProtocol {
     func startLoading() {
+        navigationItem.rightBarButtonItem?.isEnabled = false
+        navigationItem.leftBarButtonItem?.isEnabled = false
         loader.startAnimating()
         scrollView.alpha = 0
     }

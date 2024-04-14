@@ -36,6 +36,7 @@ extension NewPostPresenter: NewPostPresenterProtocol {
     }
     
     func saveNewPost(channelId: Int64, text: String, date: Date) {
+        view?.startLoading()
         let dateInt32 = Int32(date.timeIntervalSince1970)
         Task(priority: .medium) {
             do {
