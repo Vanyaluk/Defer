@@ -136,10 +136,10 @@ final class HomeViewController: UIViewController {
         let cellDate = Date(timeIntervalSince1970: TimeInterval(post.date))
         var isWarning: Bool = false
         var warnings: Int = 0
-        nowdayPosts.forEach { post in
-            let postDate = Date(timeIntervalSince1970: TimeInterval(post.date))
+        nowdayPosts.forEach { rangePost in
+            let postDate = Date(timeIntervalSince1970: TimeInterval(rangePost.date))
             if cellDate.addingTimeInterval(-timeIntervalBetweenMessages) < postDate && cellDate.addingTimeInterval(timeIntervalBetweenMessages) > postDate {
-                if post.channel.id == post.channel.id { warnings += 1 }
+                if rangePost.channel.id == post.channel.id { warnings += 1 }
             }
         }
         if warnings > 1 { isWarning = true }

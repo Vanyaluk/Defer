@@ -137,7 +137,7 @@ final class PostViewController: UIViewController {
         let day = calendar.component(.day, from: Date(timeIntervalSince1970: TimeInterval(post.date)))
         let month = calendar.component(.month, from: Date(timeIntervalSince1970: TimeInterval(post.date)))
         let year = calendar.component(.year, from: Date(timeIntervalSince1970: TimeInterval(post.date)))
-        dateLabel.text = "\(fn(day)).\(fn(month)).\(year) \(fn(min)):\(fn(hour))"
+        dateLabel.text = "\(fn(day)).\(fn(month)).\(year) \(fn(hour)):\(fn(min))"
     }
     
     private func fn(_ number: Int) -> String {
