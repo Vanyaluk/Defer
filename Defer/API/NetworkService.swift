@@ -151,7 +151,7 @@ class NetworkService {
     
     
     /// подкрузка постов по дате из кеша
-    func fetchPosts(of date: Date) -> [Components.Schemas.Post] {
+    func getCahesPosts(on date: Date) -> [Components.Schemas.Post] {
         let dayPosts = posts.filter { post in
             Calendar.current.dateComponents([.year, .month, .day], from: date) == Calendar.current.dateComponents([.year, .month, .day], from: Date(timeIntervalSince1970: TimeInterval(post.date)))
         }

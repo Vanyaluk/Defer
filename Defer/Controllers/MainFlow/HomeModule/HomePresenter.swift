@@ -8,7 +8,13 @@
 import UIKit
 
 protocol HomePresenterProtocol: AnyObject {
-    func viewDidLoaded()
+    func fetchAllPostsAndShow(on date: Date)
+    
+    func showPostsFromCash(on date: Date)
+    
+    func showPost(post: Components.Schemas.Post, selectedDate: Date)
+    
+    func showNewPost(on selectedDate: Date)
 }
 
 final class HomePresenter {
@@ -28,7 +34,41 @@ final class HomePresenter {
 
 extension HomePresenter: HomePresenterProtocol {
     
-    func viewDidLoaded() {
-        
+    func fetchAllPostsAndShow(on date: Date) {
+        Task(priority: .medium) {
+            do {
+                let result = try await networkService.fetchAllPosts()
+                if result {
+                    DispatchQueue.main.async {
+                        self.showPostsFromCash(on: date)
+                    }
+                } else {
+                    DispatchQueue.main.async { print("RootInteractorOutput Ошибка t") }
+                }
+            } catch {
+                DispatchQueue.main.async { print("RootInteractorOutput Ошибка i") }
+            }
+        }
+    }
+    
+    func showPostsFromCash(on date: Date) {
+        // сделать по дням
+        var posts = networkService.getCahesPosts(on: date)
+        posts.sort { first, second in
+            Date(timeIntervalSince1970: TimeInterval(first.date)) < Date(timeIntervalSince1970: TimeInterval(second.date))
+        }
+        view?.showPosts(posts: posts)
+    }
+    
+    func showPost(post: Components.Schemas.Post, selectedDate: Date) {
+        router.pushPostModule(post: post) { [weak self] in
+            self?.fetchAllPostsAndShow(on: selectedDate)
+        }
+    }
+    
+    func showNewPost(on selectedDate: Date) {
+        router.presentNewPostModule { [weak self] in
+            self?.fetchAllPostsAndShow(on: selectedDate)
+        }
     }
 }

@@ -57,7 +57,7 @@ final class PasswordViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Войти", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = .appColor()
         button.layer.cornerRadius = 13
         button.layer.cornerCurve = .continuous
         return button

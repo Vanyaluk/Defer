@@ -20,7 +20,7 @@ final class SettingsViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Выйти из аккаунта", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = .appColor()
         button.layer.cornerRadius = 13
         button.layer.cornerCurve = .continuous
         return button
@@ -30,7 +30,7 @@ final class SettingsViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Выйти из Telegram", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = .appColor()
         button.layer.cornerRadius = 13
         button.layer.cornerCurve = .continuous
         return button

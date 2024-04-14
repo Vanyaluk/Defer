@@ -25,7 +25,7 @@ class DateViewCell: UICollectionViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerCurve = .continuous
         view.clipsToBounds = true
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .appColor()
         return view
     }()
     
@@ -59,20 +59,18 @@ class DateViewCell: UICollectionViewCell {
     }
     
     func setup(isSelected: Bool, isToday: Bool) {
-        circle.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
         circle.alpha = 0
         number.textColor = .label
         
         if isSelected {
-            number.textColor = .white
             UIView.animate(withDuration: 0.2) {
-                self.circle.transform = CGAffineTransform(scaleX: 1, y: 1)
                 self.circle.alpha = 1
+                self.number.textColor = .white
             }
         }
         
         if isToday {
-            number.textColor = .red
+            number.textColor = .systemRed
         }
     }
 }

@@ -43,6 +43,20 @@
 		5269DB672BC6E670003B649E /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5269DB632BC6E670003B649E /* SettingsRouter.swift */; };
 		5269DB682BC6E670003B649E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5269DB642BC6E670003B649E /* SettingsViewController.swift */; };
 		5269DB692BC6E670003B649E /* SettingsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5269DB652BC6E670003B649E /* SettingsAssembly.swift */; };
+		527D34F82BCAAA4300BA5B0B /* TableMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D34F72BCAAA4300BA5B0B /* TableMessageCell.swift */; };
+		527D34FB2BCB965600BA5B0B /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D34FA2BCB965600BA5B0B /* AppColor.swift */; };
+		527D35032BCBA72200BA5B0B /* PostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D34FF2BCBA72200BA5B0B /* PostPresenter.swift */; };
+		527D35042BCBA72200BA5B0B /* PostRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D35002BCBA72200BA5B0B /* PostRouter.swift */; };
+		527D35052BCBA72200BA5B0B /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D35012BCBA72200BA5B0B /* PostViewController.swift */; };
+		527D35062BCBA72200BA5B0B /* PostAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D35022BCBA72200BA5B0B /* PostAssembly.swift */; };
+		527D350C2BCBAB8500BA5B0B /* NewPostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D35082BCBAB8500BA5B0B /* NewPostPresenter.swift */; };
+		527D350D2BCBAB8500BA5B0B /* NewPostRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D35092BCBAB8500BA5B0B /* NewPostRouter.swift */; };
+		527D350E2BCBAB8500BA5B0B /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D350A2BCBAB8500BA5B0B /* NewPostViewController.swift */; };
+		527D350F2BCBAB8500BA5B0B /* NewPostAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D350B2BCBAB8500BA5B0B /* NewPostAssembly.swift */; };
+		527D35162BCBCFED00BA5B0B /* ChannelsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D35122BCBCFED00BA5B0B /* ChannelsPresenter.swift */; };
+		527D35172BCBCFED00BA5B0B /* ChannelsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D35132BCBCFED00BA5B0B /* ChannelsRouter.swift */; };
+		527D35182BCBCFED00BA5B0B /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D35142BCBCFED00BA5B0B /* ChannelsViewController.swift */; };
+		527D35192BCBCFED00BA5B0B /* ChannelsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D35152BCBCFED00BA5B0B /* ChannelsAssembly.swift */; };
 		52D43D602BC85ED9006ED01D /* DateViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D43D5F2BC85ED9006ED01D /* DateViewCell.swift */; };
 		52D43D622BC85EFF006ED01D /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D43D612BC85EFF006ED01D /* CalendarHelper.swift */; };
 		52E770832BC653E400657E8D /* UIVerifyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E770822BC653E400657E8D /* UIVerifyTextField.swift */; };
@@ -87,6 +101,20 @@
 		5269DB632BC6E670003B649E /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		5269DB642BC6E670003B649E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5269DB652BC6E670003B649E /* SettingsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAssembly.swift; sourceTree = "<group>"; };
+		527D34F72BCAAA4300BA5B0B /* TableMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableMessageCell.swift; sourceTree = "<group>"; };
+		527D34FA2BCB965600BA5B0B /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		527D34FF2BCBA72200BA5B0B /* PostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenter.swift; sourceTree = "<group>"; };
+		527D35002BCBA72200BA5B0B /* PostRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRouter.swift; sourceTree = "<group>"; };
+		527D35012BCBA72200BA5B0B /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		527D35022BCBA72200BA5B0B /* PostAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAssembly.swift; sourceTree = "<group>"; };
+		527D35082BCBAB8500BA5B0B /* NewPostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostPresenter.swift; sourceTree = "<group>"; };
+		527D35092BCBAB8500BA5B0B /* NewPostRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostRouter.swift; sourceTree = "<group>"; };
+		527D350A2BCBAB8500BA5B0B /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		527D350B2BCBAB8500BA5B0B /* NewPostAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostAssembly.swift; sourceTree = "<group>"; };
+		527D35122BCBCFED00BA5B0B /* ChannelsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsPresenter.swift; sourceTree = "<group>"; };
+		527D35132BCBCFED00BA5B0B /* ChannelsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsRouter.swift; sourceTree = "<group>"; };
+		527D35142BCBCFED00BA5B0B /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
+		527D35152BCBCFED00BA5B0B /* ChannelsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsAssembly.swift; sourceTree = "<group>"; };
 		52D43D5F2BC85ED9006ED01D /* DateViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewCell.swift; sourceTree = "<group>"; };
 		52D43D612BC85EFF006ED01D /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		52E770822BC653E400657E8D /* UIVerifyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVerifyTextField.swift; sourceTree = "<group>"; };
@@ -207,7 +235,10 @@
 			children = (
 				5269DB5F2BC6E559003B649E /* TabBarController.swift */,
 				52355BD32BC51D430027035C /* HomeModule */,
-				5269DB612BC6E65A003B649E /* Settings */,
+				527D34FD2BCB9F1D00BA5B0B /* PostModule */,
+				527D35072BCBAB7100BA5B0B /* NewPostModule */,
+				527D35102BCBCFDE00BA5B0B /* ChannelsModule */,
+				5269DB612BC6E65A003B649E /* SettingsModule */,
 			);
 			path = MainFlow;
 			sourceTree = "<group>";
@@ -256,10 +287,11 @@
 		52355BD32BC51D430027035C /* HomeModule */ = {
 			isa = PBXGroup;
 			children = (
-				52D43D5D2BC85EC6006ED01D /* View */,
+				52355BD62BC51D9E0027035C /* HomeViewController.swift */,
 				52355BD42BC51D9E0027035C /* HomePresenter.swift */,
 				52355BD52BC51D9E0027035C /* HomeRouter.swift */,
 				52355BD72BC51D9E0027035C /* HomeAssembly.swift */,
+				52D43D5D2BC85EC6006ED01D /* Cells */,
 			);
 			path = HomeModule;
 			sourceTree = "<group>";
@@ -273,7 +305,7 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		5269DB612BC6E65A003B649E /* Settings */ = {
+		5269DB612BC6E65A003B649E /* SettingsModule */ = {
 			isa = PBXGroup;
 			children = (
 				5269DB642BC6E670003B649E /* SettingsViewController.swift */,
@@ -281,22 +313,56 @@
 				5269DB632BC6E670003B649E /* SettingsRouter.swift */,
 				5269DB652BC6E670003B649E /* SettingsAssembly.swift */,
 			);
-			path = Settings;
+			path = SettingsModule;
 			sourceTree = "<group>";
 		};
-		52D43D5D2BC85EC6006ED01D /* View */ = {
+		527D34FD2BCB9F1D00BA5B0B /* PostModule */ = {
 			isa = PBXGroup;
 			children = (
-				52355BD62BC51D9E0027035C /* HomeViewController.swift */,
-				52D43D5F2BC85ED9006ED01D /* DateViewCell.swift */,
+				527D35012BCBA72200BA5B0B /* PostViewController.swift */,
+				527D34FF2BCBA72200BA5B0B /* PostPresenter.swift */,
+				527D35002BCBA72200BA5B0B /* PostRouter.swift */,
+				527D35022BCBA72200BA5B0B /* PostAssembly.swift */,
 			);
-			path = View;
+			path = PostModule;
+			sourceTree = "<group>";
+		};
+		527D35072BCBAB7100BA5B0B /* NewPostModule */ = {
+			isa = PBXGroup;
+			children = (
+				527D350A2BCBAB8500BA5B0B /* NewPostViewController.swift */,
+				527D35082BCBAB8500BA5B0B /* NewPostPresenter.swift */,
+				527D35092BCBAB8500BA5B0B /* NewPostRouter.swift */,
+				527D350B2BCBAB8500BA5B0B /* NewPostAssembly.swift */,
+			);
+			path = NewPostModule;
+			sourceTree = "<group>";
+		};
+		527D35102BCBCFDE00BA5B0B /* ChannelsModule */ = {
+			isa = PBXGroup;
+			children = (
+				527D35142BCBCFED00BA5B0B /* ChannelsViewController.swift */,
+				527D35122BCBCFED00BA5B0B /* ChannelsPresenter.swift */,
+				527D35132BCBCFED00BA5B0B /* ChannelsRouter.swift */,
+				527D35152BCBCFED00BA5B0B /* ChannelsAssembly.swift */,
+			);
+			path = ChannelsModule;
+			sourceTree = "<group>";
+		};
+		52D43D5D2BC85EC6006ED01D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				52D43D5F2BC85ED9006ED01D /* DateViewCell.swift */,
+				527D34F72BCAAA4300BA5B0B /* TableMessageCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		52D43D632BC85FC1006ED01D /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
 				52D43D612BC85EFF006ED01D /* CalendarHelper.swift */,
+				527D34FA2BCB965600BA5B0B /* AppColor.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -400,6 +466,7 @@
 				52355BBF2BC50ED30027035C /* NumberPresenter.swift in Sources */,
 				52355BD12BC50EE80027035C /* PasswordViewController.swift in Sources */,
 				52550CF62BC567C6008CE849 /* KeychainManager.swift in Sources */,
+				527D350F2BCBAB8500BA5B0B /* NewPostAssembly.swift in Sources */,
 				52355BA42BC4FA860027035C /* FlowCoordinator.swift in Sources */,
 				52D43D602BC85ED9006ED01D /* DateViewCell.swift in Sources */,
 				52E7708E2BC6680500657E8D /* NetworkService.swift in Sources */,
@@ -411,22 +478,35 @@
 				5269DB672BC6E670003B649E /* SettingsRouter.swift in Sources */,
 				52355BDA2BC51D9E0027035C /* HomeViewController.swift in Sources */,
 				52355BD22BC50EE80027035C /* PasswordAssembly.swift in Sources */,
+				527D35192BCBCFED00BA5B0B /* ChannelsAssembly.swift in Sources */,
 				52355BCA2BC50EDE0027035C /* CodeAssembly.swift in Sources */,
+				527D35182BCBCFED00BA5B0B /* ChannelsViewController.swift in Sources */,
 				5269DB692BC6E670003B649E /* SettingsAssembly.swift in Sources */,
+				527D34F82BCAAA4300BA5B0B /* TableMessageCell.swift in Sources */,
+				527D35042BCBA72200BA5B0B /* PostRouter.swift in Sources */,
 				52355BD92BC51D9E0027035C /* HomeRouter.swift in Sources */,
 				52355BA82BC4FE0F0027035C /* AppAssembly.swift in Sources */,
 				52D43D622BC85EFF006ED01D /* CalendarHelper.swift in Sources */,
+				527D350C2BCBAB8500BA5B0B /* NewPostPresenter.swift in Sources */,
+				527D35062BCBA72200BA5B0B /* PostAssembly.swift in Sources */,
 				52355BDD2BC51DC90027035C /* AuthCoordinator.swift in Sources */,
+				527D35052BCBA72200BA5B0B /* PostViewController.swift in Sources */,
 				52355BD82BC51D9E0027035C /* HomePresenter.swift in Sources */,
 				52355B712BC45A6B0027035C /* AppDelegate.swift in Sources */,
 				52355BCF2BC50EE80027035C /* PasswordPresenter.swift in Sources */,
 				52355BB52BC50DD30027035C /* LoginViewController.swift in Sources */,
 				52355B732BC45A6B0027035C /* SceneDelegate.swift in Sources */,
 				52E770852BC653ED00657E8D /* UIVerifyView.swift in Sources */,
+				527D350E2BCBAB8500BA5B0B /* NewPostViewController.swift in Sources */,
 				5269DB602BC6E559003B649E /* TabBarController.swift in Sources */,
+				527D35162BCBCFED00BA5B0B /* ChannelsPresenter.swift in Sources */,
+				527D35172BCBCFED00BA5B0B /* ChannelsRouter.swift in Sources */,
 				52355BB62BC50DD30027035C /* LoginAssembly.swift in Sources */,
+				527D350D2BCBAB8500BA5B0B /* NewPostRouter.swift in Sources */,
 				52E770832BC653E400657E8D /* UIVerifyTextField.swift in Sources */,
+				527D35032BCBA72200BA5B0B /* PostPresenter.swift in Sources */,
 				52355BC92BC50EDE0027035C /* CodeViewController.swift in Sources */,
+				527D34FB2BCB965600BA5B0B /* AppColor.swift in Sources */,
 				52355BC22BC50ED30027035C /* NumberAssembly.swift in Sources */,
 				52355BC12BC50ED30027035C /* NumberViewController.swift in Sources */,
 				5269DB662BC6E670003B649E /* SettingsPresenter.swift in Sources */,
