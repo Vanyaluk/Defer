@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SnapKit
+
 
 protocol UIVerifyViewDelegate: AnyObject {
     func didFillAllFields(code: String)

@@ -8,11 +8,9 @@
 import UIKit
 
 protocol SettingsPresenterProtocol: AnyObject {
-    func viewDidLoaded()
+    func logoutAccountAlert()
     
-    func logoutAccount()
-    
-    func logoutTelegramSession()
+    func logoutTelegramSessionAlert()
 }
 
 final class SettingsPresenter {
@@ -33,17 +31,27 @@ final class SettingsPresenter {
 }
 
 extension SettingsPresenter: SettingsPresenterProtocol {
-    func viewDidLoaded() {
-        // first setup view
+    func logoutAccountAlert() {
+        let alert = AlertFactory().logoutAlert(title: "Выйти из аккаунта?", message: "Убедитесь, что вы помните логин и пароль от аккаунта.") { [weak self] in
+            self?.logoutAccount()
+        }
+        router.presentAlert(alert: alert)
     }
     
-    func logoutAccount() {
+    func logoutTelegramSessionAlert() {
+        let alert = AlertFactory().logoutAlert(title: "Завершить Telegram?") { [weak self] in
+            self?.logoutTelegramSession()
+        }
+        router.presentAlert(alert: alert)
+    }
+    
+    private func logoutAccount() {
         KeychainManager.shared.clearKey()
         authManager.setAuthStatus(.notAuth)
         completion()
     }
     
-    func logoutTelegramSession() {
+    private func logoutTelegramSession() {
         Task(priority: .medium) {
             do {
                 let result = try await networkService.logOutTelegram()

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SnapKit
+
 
 class TableMessageCell: UITableViewCell {
     
@@ -87,7 +87,7 @@ class TableMessageCell: UITableViewCell {
         cellView.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
             make.top.equalToSuperview().inset(10)
-            make.leading.trailing.equalToSuperview().inset(16)
+            make.leading.trailing.equalToSuperview().inset(15)
         }
         
         logoView.snp.makeConstraints { make in

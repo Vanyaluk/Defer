@@ -17,26 +17,26 @@ protocol SettingsViewProtocol: AnyObject {
 final class SettingsViewController: UIViewController {
     
     // UI
-    private lazy var exitAccountButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Выйти из аккаунта", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .app()
-        button.setTitleColor(.systemBackground, for: .normal)
-        button.layer.cornerRadius = 13
-        button.layer.cornerCurve = .continuous
-        return button
+    private lazy var exitAccountButton = UISettingsButton(title: "Выйти из аккаунта", systemImage: "rectangle.portrait.and.arrow.forward")
+    
+    private lazy var exitAccountDescription: UILabel = {
+        let label = UILabel()
+        label.textColor = .secondaryLabel
+        label.font = .systemFont(ofSize: 12)
+        label.numberOfLines = 0
+        label.text = "Вы выйдете из аккаунта, но Telegram сессия останется активной. Войти можно будет с помощью логина и пароля, надеюсь вы их не забыли."
+        return label
     }()
     
-    private lazy var exitTelegramButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Выйти из Telegram", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .app()
-        button.setTitleColor(.systemBackground, for: .normal)
-        button.layer.cornerRadius = 13
-        button.layer.cornerCurve = .continuous
-        return button
+    private lazy var exitTelegramButton = UISettingsButton(title: "Завершить Telegram сессию", systemImage: "ipad.and.iphone")
+    
+    private lazy var exitTelegramDescription: UILabel = {
+        let label = UILabel()
+        label.textColor = .secondaryLabel
+        label.font = .systemFont(ofSize: 12)
+        label.numberOfLines = 0
+        label.text = "Желательно заканчивать сессию именно таким образом. Если сделать это через в Telegram, то будут проблемы с дальнейшем подключением и аккаунт придется сменить."
+        return label
     }()
     
     var presenter: SettingsPresenterProtocol?
@@ -44,7 +44,6 @@ final class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        presenter?.viewDidLoaded()
     }
     
     private func setupUI() {
@@ -55,27 +54,39 @@ final class SettingsViewController: UIViewController {
         exitTelegramButton.addTarget(self, action: #selector(exitTelegramButtonTapped), for: .touchUpInside)
         
         view.addSubview(exitAccountButton)
+        view.addSubview(exitAccountDescription)
         view.addSubview(exitTelegramButton)
+        view.addSubview(exitTelegramDescription)
         
         exitAccountButton.snp.makeConstraints { make in
             make.height.equalTo(45)
-            make.leading.trailing.equalToSuperview().inset(30)
-            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.leading.trailing.equalToSuperview().inset(15)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
+        }
+        
+        exitAccountDescription.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(exitAccountButton.snp.bottom).offset(7)
         }
         
         exitTelegramButton.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(30)
+            make.leading.trailing.equalToSuperview().inset(15)
             make.height.equalTo(45)
-            make.top.equalTo(exitAccountButton.snp.bottom).offset(20)
+            make.top.equalTo(exitAccountDescription.snp.bottom).offset(20)
+        }
+        
+        exitTelegramDescription.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(exitTelegramButton.snp.bottom).offset(7)
         }
     }
     
     @objc private func exitAccountButtonTapped() {
-        presenter?.logoutAccount()
+        presenter?.logoutAccountAlert()
     }
     
     @objc private func exitTelegramButtonTapped() {
-        presenter?.logoutTelegramSession()
+        presenter?.logoutTelegramSessionAlert()
     }
 }
 

@@ -8,9 +8,13 @@
 import UIKit
 
 protocol SettingsRouterInput {
-    
+    func presentAlert(alert: UIAlertController)
 }
 
 final class SettingsRouter: SettingsRouterInput {
     weak var viewController: SettingsViewController?
+    
+    func presentAlert(alert: UIAlertController) {
+        viewController?.present(alert, animated: true)
+    }
 }

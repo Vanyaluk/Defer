@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SnapKit
+
 
 // MARK: - View Protocol
 protocol CodeViewProtocol: AnyObject {

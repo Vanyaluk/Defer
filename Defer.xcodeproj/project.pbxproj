@@ -33,8 +33,6 @@
 		52355BDA2BC51D9E0027035C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BD62BC51D9E0027035C /* HomeViewController.swift */; };
 		52355BDB2BC51D9E0027035C /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BD72BC51D9E0027035C /* HomeAssembly.swift */; };
 		52355BDD2BC51DC90027035C /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BDC2BC51DC90027035C /* AuthCoordinator.swift */; };
-		52474CED2BD2AE3000E55A55 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 52474CEC2BD2AE3000E55A55 /* SnapKit */; };
-		52474CEF2BD2AE3000E55A55 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 52474CEE2BD2AE3000E55A55 /* SnapKit-Dynamic */; };
 		52550CEF2BC56386008CE849 /* OpenAPIRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 52550CEE2BC56386008CE849 /* OpenAPIRuntime */; };
 		52550CF22BC5639D008CE849 /* OpenAPIURLSession in Frameworks */ = {isa = PBXBuildFile; productRef = 52550CF12BC5639D008CE849 /* OpenAPIURLSession */; };
 		52550CF62BC567C6008CE849 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52550CF52BC567C6008CE849 /* KeychainManager.swift */; };
@@ -58,6 +56,9 @@
 		527D35182BCBCFED00BA5B0B /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D35142BCBCFED00BA5B0B /* ChannelsViewController.swift */; };
 		527D35192BCBCFED00BA5B0B /* ChannelsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D35152BCBCFED00BA5B0B /* ChannelsAssembly.swift */; };
 		527D351C2BCBDBAA00BA5B0B /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D351B2BCBDBAA00BA5B0B /* AlertFactory.swift */; };
+		52AA95722BD2C48D001C33FD /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 52AA95712BD2C48D001C33FD /* SnapKit-Dynamic */; };
+		52AA95742BD2C4B5001C33FD /* SnapKit-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 52AA95712BD2C48D001C33FD /* SnapKit-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		52AA95782BD2D3E7001C33FD /* UISettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA95772BD2D3E7001C33FD /* UISettingsButton.swift */; };
 		52D43D602BC85ED9006ED01D /* DateViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D43D5F2BC85ED9006ED01D /* DateViewCell.swift */; };
 		52D43D622BC85EFF006ED01D /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D43D612BC85EFF006ED01D /* CalendarHelper.swift */; };
 		52E770832BC653E400657E8D /* UIVerifyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E770822BC653E400657E8D /* UIVerifyTextField.swift */; };
@@ -74,6 +75,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				52AA95742BD2C4B5001C33FD /* SnapKit-Dynamic in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +132,7 @@
 		527D35142BCBCFED00BA5B0B /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
 		527D35152BCBCFED00BA5B0B /* ChannelsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsAssembly.swift; sourceTree = "<group>"; };
 		527D351B2BCBDBAA00BA5B0B /* AlertFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
+		52AA95772BD2D3E7001C33FD /* UISettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISettingsButton.swift; sourceTree = "<group>"; };
 		52D43D5F2BC85ED9006ED01D /* DateViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewCell.swift; sourceTree = "<group>"; };
 		52D43D612BC85EFF006ED01D /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		52E770822BC653E400657E8D /* UIVerifyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVerifyTextField.swift; sourceTree = "<group>"; };
@@ -144,10 +147,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52474CED2BD2AE3000E55A55 /* SnapKit in Frameworks */,
 				52550CF22BC5639D008CE849 /* OpenAPIURLSession in Frameworks */,
 				52550CEF2BC56386008CE849 /* OpenAPIRuntime in Frameworks */,
-				52474CEF2BD2AE3000E55A55 /* SnapKit-Dynamic in Frameworks */,
+				52AA95722BD2C48D001C33FD /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +161,6 @@
 			children = (
 				52355B6F2BC45A6B0027035C /* Defer */,
 				52355B6E2BC45A6B0027035C /* Products */,
-				52F7CE9D2BCC59D300E33B7B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -329,6 +330,7 @@
 				5269DB622BC6E670003B649E /* SettingsPresenter.swift */,
 				5269DB632BC6E670003B649E /* SettingsRouter.swift */,
 				5269DB652BC6E670003B649E /* SettingsAssembly.swift */,
+				52AA957A2BD2D3EC001C33FD /* Views */,
 			);
 			path = SettingsModule;
 			sourceTree = "<group>";
@@ -366,6 +368,14 @@
 			path = ChannelsModule;
 			sourceTree = "<group>";
 		};
+		52AA957A2BD2D3EC001C33FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				52AA95772BD2D3E7001C33FD /* UISettingsButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		52D43D5D2BC85EC6006ED01D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,13 +403,6 @@
 			path = CodeField;
 			sourceTree = "<group>";
 		};
-		52F7CE9D2BCC59D300E33B7B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -421,8 +424,7 @@
 			packageProductDependencies = (
 				52550CEE2BC56386008CE849 /* OpenAPIRuntime */,
 				52550CF12BC5639D008CE849 /* OpenAPIURLSession */,
-				52474CEC2BD2AE3000E55A55 /* SnapKit */,
-				52474CEE2BD2AE3000E55A55 /* SnapKit-Dynamic */,
+				52AA95712BD2C48D001C33FD /* SnapKit-Dynamic */,
 			);
 			productName = Defer;
 			productReference = 52355B6D2BC45A6B0027035C /* Defer.app */;
@@ -434,7 +436,7 @@
 		52355B652BC45A6B0027035C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1510;
 				LastUpgradeCheck = 1510;
 				TargetAttributes = {
@@ -456,7 +458,7 @@
 				52550CEC2BC56358008CE849 /* XCRemoteSwiftPackageReference "swift-openapi-generator" */,
 				52550CED2BC56386008CE849 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */,
 				52550CF02BC5639D008CE849 /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */,
-				52474CEB2BD2AE3000E55A55 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				52AA95702BD2C48D001C33FD /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 52355B6E2BC45A6B0027035C /* Products */;
 			projectDirPath = "";
@@ -503,6 +505,7 @@
 				52355BA62BC4FD470027035C /* AppCoordinator.swift in Sources */,
 				5269DB672BC6E670003B649E /* SettingsRouter.swift in Sources */,
 				52355BDA2BC51D9E0027035C /* HomeViewController.swift in Sources */,
+				52AA95782BD2D3E7001C33FD /* UISettingsButton.swift in Sources */,
 				52355BD22BC50EE80027035C /* PasswordAssembly.swift in Sources */,
 				527D35192BCBCFED00BA5B0B /* ChannelsAssembly.swift in Sources */,
 				52355BCA2BC50EDE0027035C /* CodeAssembly.swift in Sources */,
@@ -612,7 +615,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -669,7 +672,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -768,14 +771,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		52474CEB2BD2AE3000E55A55 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.7.1;
-			};
-		};
 		52550CEC2BC56358008CE849 /* XCRemoteSwiftPackageReference "swift-openapi-generator" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-openapi-generator";
@@ -800,19 +795,17 @@
 				minimumVersion = 1.0.1;
 			};
 		};
+		52AA95702BD2C48D001C33FD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		52474CEC2BD2AE3000E55A55 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 52474CEB2BD2AE3000E55A55 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		52474CEE2BD2AE3000E55A55 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 52474CEB2BD2AE3000E55A55 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
-		};
 		52550CEE2BC56386008CE849 /* OpenAPIRuntime */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 52550CED2BC56386008CE849 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */;
@@ -822,6 +815,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 52550CF02BC5639D008CE849 /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */;
 			productName = OpenAPIURLSession;
+		};
+		52AA95712BD2C48D001C33FD /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52AA95702BD2C48D001C33FD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
 		};
 		52E7708A2BC665A800657E8D /* OpenAPIGenerator */ = {
 			isa = XCSwiftPackageProductDependency;
