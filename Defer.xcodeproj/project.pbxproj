@@ -33,8 +33,8 @@
 		52355BDA2BC51D9E0027035C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BD62BC51D9E0027035C /* HomeViewController.swift */; };
 		52355BDB2BC51D9E0027035C /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BD72BC51D9E0027035C /* HomeAssembly.swift */; };
 		52355BDD2BC51DC90027035C /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BDC2BC51DC90027035C /* AuthCoordinator.swift */; };
-		52550CE92BC5601E008CE849 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 52550CE82BC5601E008CE849 /* SnapKit */; };
-		52550CEB2BC5601E008CE849 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 52550CEA2BC5601E008CE849 /* SnapKit-Dynamic */; };
+		52474CED2BD2AE3000E55A55 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 52474CEC2BD2AE3000E55A55 /* SnapKit */; };
+		52474CEF2BD2AE3000E55A55 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 52474CEE2BD2AE3000E55A55 /* SnapKit-Dynamic */; };
 		52550CEF2BC56386008CE849 /* OpenAPIRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 52550CEE2BC56386008CE849 /* OpenAPIRuntime */; };
 		52550CF22BC5639D008CE849 /* OpenAPIURLSession in Frameworks */ = {isa = PBXBuildFile; productRef = 52550CF12BC5639D008CE849 /* OpenAPIURLSession */; };
 		52550CF62BC567C6008CE849 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52550CF52BC567C6008CE849 /* KeychainManager.swift */; };
@@ -66,6 +66,19 @@
 		52E770892BC6657B00657E8D /* openapi.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 52E770872BC6657B00657E8D /* openapi.yaml */; };
 		52E7708E2BC6680500657E8D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7708D2BC6680500657E8D /* NetworkService.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		52F7CE9A2BCC595C00E33B7B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		52355B6D2BC45A6B0027035C /* Defer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Defer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,10 +144,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52474CED2BD2AE3000E55A55 /* SnapKit in Frameworks */,
 				52550CF22BC5639D008CE849 /* OpenAPIURLSession in Frameworks */,
-				52550CE92BC5601E008CE849 /* SnapKit in Frameworks */,
 				52550CEF2BC56386008CE849 /* OpenAPIRuntime in Frameworks */,
-				52550CEB2BC5601E008CE849 /* SnapKit-Dynamic in Frameworks */,
+				52474CEF2BD2AE3000E55A55 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +159,7 @@
 			children = (
 				52355B6F2BC45A6B0027035C /* Defer */,
 				52355B6E2BC45A6B0027035C /* Products */,
+				52F7CE9D2BCC59D300E33B7B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -379,6 +393,13 @@
 			path = CodeField;
 			sourceTree = "<group>";
 		};
+		52F7CE9D2BCC59D300E33B7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -389,6 +410,7 @@
 				52355B692BC45A6B0027035C /* Sources */,
 				52355B6A2BC45A6B0027035C /* Frameworks */,
 				52355B6B2BC45A6B0027035C /* Resources */,
+				52F7CE9A2BCC595C00E33B7B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -397,10 +419,10 @@
 			);
 			name = Defer;
 			packageProductDependencies = (
-				52550CE82BC5601E008CE849 /* SnapKit */,
-				52550CEA2BC5601E008CE849 /* SnapKit-Dynamic */,
 				52550CEE2BC56386008CE849 /* OpenAPIRuntime */,
 				52550CF12BC5639D008CE849 /* OpenAPIURLSession */,
+				52474CEC2BD2AE3000E55A55 /* SnapKit */,
+				52474CEE2BD2AE3000E55A55 /* SnapKit-Dynamic */,
 			);
 			productName = Defer;
 			productReference = 52355B6D2BC45A6B0027035C /* Defer.app */;
@@ -431,10 +453,10 @@
 			);
 			mainGroup = 52355B642BC45A6B0027035C;
 			packageReferences = (
-				52550CE72BC5601E008CE849 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				52550CEC2BC56358008CE849 /* XCRemoteSwiftPackageReference "swift-openapi-generator" */,
 				52550CED2BC56386008CE849 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */,
 				52550CF02BC5639D008CE849 /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */,
+				52474CEB2BD2AE3000E55A55 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 52355B6E2BC45A6B0027035C /* Products */;
 			projectDirPath = "";
@@ -651,6 +673,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
@@ -662,6 +685,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8YJ26SYSQ5;
@@ -678,6 +702,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vanyaluk.Defer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -692,6 +717,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8YJ26SYSQ5;
@@ -708,6 +734,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vanyaluk.Defer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -741,7 +768,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		52550CE72BC5601E008CE849 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		52474CEB2BD2AE3000E55A55 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -776,14 +803,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		52550CE82BC5601E008CE849 /* SnapKit */ = {
+		52474CEC2BD2AE3000E55A55 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 52550CE72BC5601E008CE849 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 52474CEB2BD2AE3000E55A55 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		52550CEA2BC5601E008CE849 /* SnapKit-Dynamic */ = {
+		52474CEE2BD2AE3000E55A55 /* SnapKit-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 52550CE72BC5601E008CE849 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 52474CEB2BD2AE3000E55A55 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = "SnapKit-Dynamic";
 		};
 		52550CEE2BC56386008CE849 /* OpenAPIRuntime */ = {

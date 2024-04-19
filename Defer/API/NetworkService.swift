@@ -62,7 +62,7 @@ class NetworkService {
             return try responce.body.json.state.rawValue
         case .badRequest(_):
             return nil
-        case .undocumented(let statusCode, _):
+        case .undocumented(_, _):
             return nil
         }
     }
@@ -146,7 +146,7 @@ class NetworkService {
     
     /// удаление поста
     func deletePost(channelId: Int64, messageId: Int64) async throws {
-        let result = try await client.delete_sol_api_sol_tg_hyphen_interaction_sol_scheduled_posts(.init(body: .json(.init(channelId: channelId, messageIds: [messageId]))))
+        let _ = try await client.delete_sol_api_sol_tg_hyphen_interaction_sol_scheduled_posts(.init(body: .json(.init(channelId: channelId, messageIds: [messageId]))))
     }
     
     
@@ -166,7 +166,7 @@ class NetworkService {
     func logOutTelegram() async throws -> Bool {
         let result = try await client.patch_sol_api_sol_telegram()
         switch result {
-        case .ok(let responce):
+        case .ok(_):
             return true
         case .badRequest(_):
             return false
@@ -183,7 +183,7 @@ class NetworkService {
             return
         }
         
-        if let image = imageCash[id] {
+        if let _ = imageCash[id] {
             completion()
             return
         }
@@ -223,6 +223,6 @@ class NetworkService {
     
     /// создание нового поста
     func saveNewPost(channelId: Int64, text: String, date: Int32) async throws {
-        let result = try await client.put_sol_api_sol_tg_hyphen_interaction_sol_create_scheduled_post(.init(body: .json(.init(channelId: channelId, text: text, date: date))))
+        let _ = try await client.put_sol_api_sol_tg_hyphen_interaction_sol_create_scheduled_post(.init(body: .json(.init(channelId: channelId, text: text, date: date))))
     }
 }

@@ -32,7 +32,7 @@ final class UIVerifyTextField: UITextField {
         layer.cornerRadius = 14
         layer.cornerCurve = .continuous
         tintColor = .clear
-        layer.borderColor = UIColor.appColor().cgColor
+        layer.borderColor = UIColor.app().cgColor
         textColor = .label
         font = .systemFont(ofSize: 35, weight: .semibold)
         textAlignment = .center

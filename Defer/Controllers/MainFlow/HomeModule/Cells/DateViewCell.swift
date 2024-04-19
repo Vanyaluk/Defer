@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class DateViewCell: UICollectionViewCell {
     
@@ -14,7 +15,6 @@ class DateViewCell: UICollectionViewCell {
     // UI
     lazy var number: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "10"
         label.textAlignment = .center
         return label
@@ -22,16 +22,15 @@ class DateViewCell: UICollectionViewCell {
     
     private lazy var circle: UIView = {
         let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerCurve = .continuous
+        view.layer.cornerRadius = 17
         view.clipsToBounds = true
-        view.backgroundColor = .appColor()
+        view.backgroundColor = .app()
         return view
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupUI()
     }
     
@@ -40,22 +39,16 @@ class DateViewCell: UICollectionViewCell {
     }
     
     private func setupUI() {
-        circle.layer.cornerRadius = contentView.frame.height / 2
-        
         contentView.addSubview(circle)
-        contentView.addSubview(number)
+        circle.snp.makeConstraints { make in
+            make.centerY.centerX.equalToSuperview()
+            make.height.width.equalTo(34)
+        }
         
-        NSLayoutConstraint.activate([
-            circle.topAnchor.constraint(equalTo: contentView.topAnchor),
-            circle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            circle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            circle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            
-            number.topAnchor.constraint(equalTo: contentView.topAnchor),
-            number.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            number.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            number.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-        ])
+        contentView.addSubview(number)
+        number.snp.makeConstraints { make in
+            make.centerY.centerX.equalToSuperview()
+        }
     }
     
     func setup(isSelected: Bool, isToday: Bool) {
@@ -69,7 +62,7 @@ class DateViewCell: UICollectionViewCell {
             }
         }
         
-        if isToday {
+        if isToday && !isSelected {
             number.textColor = .systemRed
         }
     }

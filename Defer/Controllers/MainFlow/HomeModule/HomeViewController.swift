@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 // MARK: - View Protocol
 protocol HomeViewProtocol: AnyObject {
@@ -55,9 +56,11 @@ final class HomeViewController: UIViewController {
         button.layer.cornerRadius = 25
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(systemName: "plus"), for: .normal)
-        button.backgroundColor = .systemBlue
-        button.tintColor = .white
+        let config = UIImage.SymbolConfiguration(pointSize: 25, weight: .semibold)
+        let image = UIImage(systemName: "plus", withConfiguration: config)
+        button.setImage(image, for: .normal)
+        button.tintColor = .systemBackground
+        button.backgroundColor = .app()
         button.addTarget(self, action: #selector(addNewPostButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -68,6 +71,20 @@ final class HomeViewController: UIViewController {
         label.textColor = .secondaryLabel
         label.isHidden = true
         return label
+    }()
+    
+    private lazy var rightButton: UIBarButtonItem = {
+        let config1 = UIImage.SymbolConfiguration(hierarchicalColor: .label)
+        let config2 = UIImage.SymbolConfiguration(scale: .large)
+        let image = UIImage(systemName: "arrow.right.circle.fill", withConfiguration: config2)
+        return UIBarButtonItem(image: image?.applyingSymbolConfiguration(config1), style: .plain, target: self, action: #selector(nextWeek))
+    }()
+    
+    private lazy var leftButton: UIBarButtonItem = {
+        let config1 = UIImage.SymbolConfiguration(hierarchicalColor: .label)
+        let config2 = UIImage.SymbolConfiguration(scale: .large)
+        let image = UIImage(systemName: "arrow.left.circle.fill", withConfiguration: config2)
+        return UIBarButtonItem(image: image?.applyingSymbolConfiguration(config1), style: .plain, target: self, action: #selector(lastWeek))
     }()
     
     var presenter: HomePresenterProtocol?
@@ -86,9 +103,8 @@ final class HomeViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .systemBackground
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.right.circle"), style: .plain, target: self, action: #selector(nextWeek))
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left.circle"), style: .plain, target: self, action: #selector(lastWeek))
+        navigationItem.rightBarButtonItem = rightButton
+        navigationItem.leftBarButtonItem = leftButton
         
         navigationItem.backButtonTitle = "Назад"
         

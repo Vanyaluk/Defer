@@ -20,7 +20,7 @@ final class AppCoordinator: FlowCoordinator {
     }
     
     func start() {
-        window?.tintColor = .appColor()
+        window?.tintColor = .tint()
         if let window {
             UIView.transition(with: window, duration: 0.2, options: .transitionCrossDissolve, animations: nil, completion: nil)
         }

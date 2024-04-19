@@ -8,7 +8,11 @@
 import UIKit
 
 extension UIColor {
-    class func appColor() -> UIColor {
-        return UIColor.systemBlue
+    class func app() -> UIColor {
+        return UIColor.systemTeal
+    }
+    
+    class func tint() -> UIColor {
+        return UIColor.label
     }
 }

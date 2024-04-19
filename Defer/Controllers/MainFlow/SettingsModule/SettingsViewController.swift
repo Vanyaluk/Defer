@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 // MARK: - View Protocol
 protocol SettingsViewProtocol: AnyObject {
@@ -20,7 +21,8 @@ final class SettingsViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Выйти из аккаунта", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .appColor()
+        button.backgroundColor = .app()
+        button.setTitleColor(.systemBackground, for: .normal)
         button.layer.cornerRadius = 13
         button.layer.cornerCurve = .continuous
         return button
@@ -30,7 +32,8 @@ final class SettingsViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Выйти из Telegram", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .appColor()
+        button.backgroundColor = .app()
+        button.setTitleColor(.systemBackground, for: .normal)
         button.layer.cornerRadius = 13
         button.layer.cornerCurve = .continuous
         return button

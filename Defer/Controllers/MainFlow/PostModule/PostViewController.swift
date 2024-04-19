@@ -29,7 +29,7 @@ final class PostViewController: UIViewController {
     private lazy var contentView: UIView = {
         let view = UIView()
         view.backgroundColor = .secondarySystemBackground
-        view.layer.cornerRadius = 12
+        view.layer.cornerRadius = 18
         view.layer.cornerCurve = .continuous
         view.clipsToBounds = true
         return view
@@ -53,7 +53,7 @@ final class PostViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Перейти в Telegram", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = .app()
         button.layer.cornerRadius = 14
         button.layer.cornerCurve = .continuous
         button.addTarget(self, action: #selector(telegramButtonTapped), for: .touchUpInside)
