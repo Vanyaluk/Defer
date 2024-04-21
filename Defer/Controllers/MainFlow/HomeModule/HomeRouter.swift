@@ -34,6 +34,7 @@ final class HomeRouter: HomeRouterInput {
     
     func presentNewPostModule(completion: @escaping () -> Void) {
         let vc = UINavigationController(rootViewController: newPostAssembly.assemble(completion: completion))
+        vc.isModalInPresentation = true
         viewController?.present(vc, animated: true)
     }
     

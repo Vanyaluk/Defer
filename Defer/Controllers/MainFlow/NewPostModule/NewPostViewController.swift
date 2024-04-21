@@ -85,6 +85,8 @@ final class NewPostViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveButtonTapped))
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отмена", style: .plain, target: self, action: #selector(dismissButtonTapped))
+        
         navigationItem.backButtonTitle = "Назад"
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -99,7 +101,7 @@ final class NewPostViewController: UIViewController {
         contentView1.snp.makeConstraints { make in
             make.top.equalTo(datePicker.snp.bottom).offset(10)
             make.leading.trailing.equalToSuperview().inset(20)
-            make.height.equalTo(50)
+            make.height.equalTo(45)
         }
         
         contentView1.addSubview(choiseChannelButton)
@@ -135,6 +137,10 @@ final class NewPostViewController: UIViewController {
         guard !postTextView.text.replacingOccurrences(of: " ", with: "").isEmpty else { return }
         guard datePicker.date > .now else { return }
         presenter?.saveNewPost(channelId: channelId, text: postTextView.text, date: datePicker.date)
+    }
+    
+    @objc private func dismissButtonTapped() {
+        presenter?.closeView()
     }
     
     @objc private func choiseNewChanelsButtonTapped() {

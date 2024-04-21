@@ -13,6 +13,8 @@ protocol NewPostPresenterProtocol: AnyObject {
     func saveNewPost(channelId: Int64, text: String, date: Date)
     
     func chooseChannel()
+    
+    func closeView()
 }
 
 final class NewPostPresenter {
@@ -56,5 +58,9 @@ extension NewPostPresenter: NewPostPresenterProtocol {
         router.pushChanelsModule { [weak self] id, channel in
             self?.view?.setChannel(id: id, channel: channel)
         }
+    }
+    
+    func closeView() {
+        router.dismissView()
     }
 }

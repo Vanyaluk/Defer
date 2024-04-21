@@ -40,7 +40,8 @@ final class AuthCoordinator: FlowCoordinator {
     
     private func showLoginModule() {
         let vc = LoginAssembly(authManager: authManager, networkService: networkService).assemble(completion: start)
-        navigationController.pushViewController(vc, animated: true)
+        navigationController.viewControllers.insert(vc, at: 0)
+        navigationController.popToRootViewController(animated: true)
     }
     
     private func showNumberModule() {
