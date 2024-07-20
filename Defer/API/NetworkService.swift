@@ -15,7 +15,7 @@ import HTTPTypes
 struct AuthenticationMiddleware: ClientMiddleware {
 
     /// The token value.
-    var bearerToken: String
+    let bearerToken: String
 
     func intercept(_ request: HTTPRequest,
                    body: HTTPBody?,
@@ -59,7 +59,7 @@ class NetworkService {
         let result = try await client.get_sol_api_sol_telegram_sol_status()
         switch result {
         case .ok(let responce):
-            return try responce.body.json.state.rawValue
+            return responce.body.json.state.rawValue
         case .badRequest(_):
             return nil
         case .undocumented(_, _):

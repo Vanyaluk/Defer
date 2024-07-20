@@ -16,9 +16,6 @@
 		52355BA62BC4FD470027035C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BA52BC4FD470027035C /* AppCoordinator.swift */; };
 		52355BA82BC4FE0F0027035C /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BA72BC4FE0F0027035C /* AppAssembly.swift */; };
 		52355BAC2BC4FE8C0027035C /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BAB2BC4FE8C0027035C /* AuthManager.swift */; };
-		52355BB32BC50DD30027035C /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BAF2BC50DD20027035C /* LoginPresenter.swift */; };
-		52355BB52BC50DD30027035C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BB12BC50DD20027035C /* LoginViewController.swift */; };
-		52355BB62BC50DD30027035C /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BB22BC50DD20027035C /* LoginAssembly.swift */; };
 		52355BBF2BC50ED30027035C /* NumberPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BBB2BC50ED30027035C /* NumberPresenter.swift */; };
 		52355BC12BC50ED30027035C /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BBD2BC50ED30027035C /* NumberViewController.swift */; };
 		52355BC22BC50ED30027035C /* NumberAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52355BBE2BC50ED30027035C /* NumberAssembly.swift */; };
@@ -94,9 +91,6 @@
 		52355BA52BC4FD470027035C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		52355BA72BC4FE0F0027035C /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		52355BAB2BC4FE8C0027035C /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		52355BAF2BC50DD20027035C /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
-		52355BB12BC50DD20027035C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		52355BB22BC50DD20027035C /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		52355BBB2BC50ED30027035C /* NumberPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPresenter.swift; sourceTree = "<group>"; };
 		52355BBD2BC50ED30027035C /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
 		52355BBE2BC50ED30027035C /* NumberAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberAssembly.swift; sourceTree = "<group>"; };
@@ -239,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				52355BDC2BC51DC90027035C /* AuthCoordinator.swift */,
-				52355BB72BC50DDD0027035C /* LoginModule */,
 				52355BB82BC50DE70027035C /* NumberModule */,
 				52355BB92BC50E9A0027035C /* CodeModule */,
 				52355BBA2BC50EA60027035C /* PasswordModule */,
@@ -259,16 +252,6 @@
 				5269DB612BC6E65A003B649E /* SettingsModule */,
 			);
 			path = MainFlow;
-			sourceTree = "<group>";
-		};
-		52355BB72BC50DDD0027035C /* LoginModule */ = {
-			isa = PBXGroup;
-			children = (
-				52355BB12BC50DD20027035C /* LoginViewController.swift */,
-				52355BAF2BC50DD20027035C /* LoginPresenter.swift */,
-				52355BB22BC50DD20027035C /* LoginAssembly.swift */,
-			);
-			path = LoginModule;
 			sourceTree = "<group>";
 		};
 		52355BB82BC50DE70027035C /* NumberModule */ = {
@@ -488,7 +471,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52355BB32BC50DD30027035C /* LoginPresenter.swift in Sources */,
 				52355BC72BC50EDE0027035C /* CodePresenter.swift in Sources */,
 				52355BBF2BC50ED30027035C /* NumberPresenter.swift in Sources */,
 				52355BD12BC50EE80027035C /* PasswordViewController.swift in Sources */,
@@ -523,14 +505,12 @@
 				52355BD82BC51D9E0027035C /* HomePresenter.swift in Sources */,
 				52355B712BC45A6B0027035C /* AppDelegate.swift in Sources */,
 				52355BCF2BC50EE80027035C /* PasswordPresenter.swift in Sources */,
-				52355BB52BC50DD30027035C /* LoginViewController.swift in Sources */,
 				52355B732BC45A6B0027035C /* SceneDelegate.swift in Sources */,
 				52E770852BC653ED00657E8D /* UIVerifyView.swift in Sources */,
 				527D350E2BCBAB8500BA5B0B /* NewPostViewController.swift in Sources */,
 				5269DB602BC6E559003B649E /* TabBarController.swift in Sources */,
 				527D35162BCBCFED00BA5B0B /* ChannelsPresenter.swift in Sources */,
 				527D35172BCBCFED00BA5B0B /* ChannelsRouter.swift in Sources */,
-				52355BB62BC50DD30027035C /* LoginAssembly.swift in Sources */,
 				527D350D2BCBAB8500BA5B0B /* NewPostRouter.swift in Sources */,
 				52E770832BC653E400657E8D /* UIVerifyTextField.swift in Sources */,
 				527D35032BCBA72200BA5B0B /* PostPresenter.swift in Sources */,
@@ -709,6 +689,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -741,6 +722,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

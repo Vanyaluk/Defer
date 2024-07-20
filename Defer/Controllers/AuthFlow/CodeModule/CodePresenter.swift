@@ -53,8 +53,8 @@ extension CodePresenter: CodePresenterProtocol {
             do {
                 let result = try await networkService.codeTelegram(code: code)
                 if let result {
-                    DispatchQueue.main.async {
-                        self.resultParsing(result: result)
+                    DispatchQueue.main.async { [weak self] in
+                        self?.resultParsing(result: result)
                     }
                 } else {
                     DispatchQueue.main.async {

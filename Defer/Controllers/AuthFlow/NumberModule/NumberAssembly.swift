@@ -9,8 +9,8 @@ import UIKit
 
 final class NumberAssembly {
     
-    let authManager: AuthManagerProtocol
-    let networkService: NetworkService
+    private let authManager: AuthManagerProtocol
+    private let networkService: NetworkService
     
     init(authManager: AuthManagerProtocol, networkService: NetworkService) {
         self.authManager = authManager

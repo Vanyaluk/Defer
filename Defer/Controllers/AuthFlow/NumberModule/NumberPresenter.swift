@@ -8,7 +8,6 @@
 import UIKit
 
 protocol NumberPresenterProtocol: AnyObject {
-    func viewDidLoaded()
     
     func buttonTapped(number: String)
     
@@ -31,9 +30,6 @@ final class NumberPresenter {
 }
 
 extension NumberPresenter: NumberPresenterProtocol {
-    func viewDidLoaded() {
-        // first setup view
-    }
     
     func buttonTapped(number: String) {
         // TODO: запрос за статусом на сервер
@@ -95,4 +91,10 @@ extension NumberPresenter: NumberPresenterProtocol {
         authManager.setAuthStatus(.notAuth)
         completion()
     }
+}
+
+// MARK: - Private
+
+private extension NumberPresenter {
+    
 }

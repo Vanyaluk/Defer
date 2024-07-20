@@ -78,25 +78,28 @@ final class NumberViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupUI()
-        presenter?.viewDidLoaded()
     }
     
     private func setupUI() {
         view.backgroundColor = .systemBackground
         navigationItem.hidesBackButton = true
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboard, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         continueButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
         
-        if let _ = KeychainManager.shared.getKey() {
+        if KeychainManager.shared.getKey() != nil {
             navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "rectangle.portrait.and.arrow.forward"), style: .done, target: self, action: #selector(logoutButtonTapped))
         }
         
         numberField.delegate = self
         
         view.addSubview(contentView)
+        [mainLabel].forEach {
+            contentView.addSubview($0)
+        }
         contentView.addSubview(mainLabel)
         contentView.addSubview(infoLabel)
         contentView.addSubview(numberField)
@@ -132,7 +135,7 @@ final class NumberViewController: UIViewController {
         }
         
         continueButton.snp.makeConstraints { make in
-            make.height.equalTo(50)
+            make.height.equalTo(Constants.Button.heightConstraints)
             make.left.right.equalToSuperview().inset(30)
             make.bottom.equalToSuperview()
         }
@@ -202,7 +205,9 @@ extension NumberViewController: NumberViewProtocol {
 
 
 // MARK: - UITextFieldDelegate Realization
+
 extension NumberViewController: UITextFieldDelegate {
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return false }
         let newString = (text as NSString).replacingCharacters(in: range, with: string)
@@ -225,5 +230,14 @@ extension NumberViewController: UITextFieldDelegate {
             }
         }
         return result
+    }
+}
+
+private extension NumberViewController {
+    
+    struct Constants {
+        struct Button {
+            static let heightConstraints = 50
+        }
     }
 }

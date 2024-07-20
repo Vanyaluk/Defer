@@ -38,6 +38,8 @@ final class AuthCoordinator: FlowCoordinator {
         }
     }
     
+    // MARK: - Private 
+    
     private func showLoginModule() {
         let vc = LoginAssembly(authManager: authManager, networkService: networkService).assemble(completion: start)
         navigationController.viewControllers.insert(vc, at: 0)
